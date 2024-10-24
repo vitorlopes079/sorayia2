@@ -1,0 +1,45 @@
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.carouselInner {
+  display: flex;
+  will-change: transform; 
+  margin: 0 auto;
+}
+
+.group {
+  display: flex;
+  gap: 50px; 
+}
+
+.duplicateGroup {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .duplicateGroup {
+    display: flex; 
+  }
+
+  .carouselInner {
+    animation: scrolling 20s linear infinite; 
+  }
+
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); 
+    }
+  }
+
+  .carousel:hover .carouselInner {
+    animation-play-state: paused;
+  }
+}

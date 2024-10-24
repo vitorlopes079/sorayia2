@@ -1,0 +1,125 @@
+.container {
+  color: #fff;
+  margin: 120px auto;
+  width: 90%;
+}
+
+.protocolSection {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 40px;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 19px;
+  color: #a1a1ab;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.integrationWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 80%;
+  margin: 120px auto;
+  height: 610px;
+}
+
+.iconsLeft,
+.iconsRight {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
+
+.iconWrapper {
+  position: relative;
+}
+
+.center {
+  position: relative;
+  z-index: 1;
+}
+
+.centerIcon {
+  width: 100px;
+  height: 100px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* Custom positioning for left icons */
+.iconLeft1 {
+  top: 0;
+  left: 0;
+}
+
+.iconLeft2 {
+  top: 50px;
+  left: 30px;
+}
+
+.iconLeft3 {
+  top: 100px;
+  left: 60px;
+}
+
+.iconLeft4 {
+  top: 150px;
+  left: 30px;
+}
+
+.iconLeft5 {
+  top: 200px;
+  left: 0;
+}
+
+/* Custom positioning for right icons */
+.iconRight1 {
+  top: 0;
+  right: 0;
+}
+
+.iconRight2 {
+  top: 50px;
+  right: 30px;
+}
+
+.iconRight3 {
+  top: 100px;
+  right: 60px;
+}
+
+.iconRight4 {
+  top: 150px;
+  right: 30px;
+}
+
+.iconRight5 {
+  top: 200px;
+  right: 0;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .integrationWrapper {
+    flex-direction: column;
+  }
+
+  .iconsLeft,
+  .iconsRight {
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+}

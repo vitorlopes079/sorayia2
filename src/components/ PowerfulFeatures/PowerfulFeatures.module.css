@@ -1,0 +1,34 @@
+.container {
+  margin: auto;
+  background-color: #fff;
+  padding: 10rem 5%; 
+}
+
+.header {
+  font-size: 40px;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.subheader {
+  font-size: 19px;
+  color: #a1a1ab;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.featuresGrid {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.smallerFeaturesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  justify-items: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 1rem;
+}

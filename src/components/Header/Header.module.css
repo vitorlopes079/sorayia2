@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 35px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.links {
+  display: flex;
+  gap: 70px;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 35px;
+}

@@ -1,0 +1,222 @@
+.howItWorks {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem 0;
+  border-radius: 8px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+}
+.col {
+  flex: 1;
+  width: 100%;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.2px;
+}
+
+.subtitle {
+  font-size: 19px;
+  color: #aaa;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step {
+  padding: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.step:hover {
+  background-color: #333;
+}
+
+.stepHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stepNumber {
+  margin-right: 1rem;
+  color: #71717b;
+  font-weight: 200;
+  font-size: 25px;
+}
+
+.stepTitle {
+  flex-grow: 1;
+  font-size: 35px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.expandIcon {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.stepDescription {
+  margin-top: 1rem;
+  color: #ccc;
+}
+
+.active .stepDescription {
+  display: block;
+}
+
+.carousel {
+  position: relative;
+  width: 530px;
+  height: 759.04px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #111;
+  margin: auto;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bullets {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #555;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.activeBullet {
+  background-color: #fff;
+}
+
+.rotateDown {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotateUp {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+@media (max-width: 1400px) {
+  .howItWorks {
+    gap: 1.5rem;
+  }
+
+  .carousel {
+    width: 450px;
+    height: 645px;
+  }
+
+  .title {
+    font-size: 36px; /* Adjust the title font size */
+  }
+
+  .subtitle {
+    font-size: 17px; /* Adjust the subtitle font size */
+  }
+
+  .stepTitle {
+    font-size: 32px; /* Reduce the step title size */
+  }
+
+  .stepNumber {
+    font-size: 22px; /* Adjust the step number size */
+  }
+}
+
+@media (max-width: 1200px) {
+  .howItWorks {
+    flex-direction: column; /* Switch to a stacked layout */
+    align-items: center;
+  }
+
+  .carousel {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    aspect-ratio: 3/4;
+  }
+
+  .col {
+    width: 100%;
+    padding: 0;
+  }
+
+  .steps {
+    width: 100%;
+  }
+
+  .stepTitle {
+    font-size: 28px;
+  }
+
+  .stepNumber {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .howItWorks {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .carousel {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .stepTitle {
+    font-size: 24px;
+  }
+
+  .stepNumber {
+    font-size: 18px;
+  }
+}
