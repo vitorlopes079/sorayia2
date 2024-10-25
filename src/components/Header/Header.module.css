@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 20px 35px;
+  position: relative;
 }
 
 .logo {
@@ -20,9 +21,98 @@
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.link:hover {
+  transform: scale(1.1); /* Slightly enlarges the link */
+  color: #fff; /* Optional: change color on hover */
 }
 
 .buttonsContainer {
   display: flex;
   gap: 35px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+@media (max-width: 1000px) {
+  .links {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    right: 35px;
+    background: #222;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+
+  .showMenu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+}
+
+@media (max-width: 700px) {
+  .buttonsContainer {
+    gap: 16px;
+  }
+
+  .logoImage {
+    width: 28px;
+    height: 31px;
+  }
+
+  .logoText {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 12px;
+    position: relative;
+  }
+
+  .buttonsContainer {
+    gap: 8px;
+  }
+  .logoImage {
+    width: 24px;
+    height: 26px;
+  }
+
+  .logoText {
+    font-size: 14px;
+  }
+
+  .bar {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin-left: 4px;
+  }
 }

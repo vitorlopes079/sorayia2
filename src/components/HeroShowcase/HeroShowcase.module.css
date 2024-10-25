@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  overflow: hidden;
 }
 
 .header {
@@ -49,9 +50,46 @@
   top: -150px;
   width: 671px;
   height: 584.337px;
-  z-index: 1;
+  z-index: 2;
   border-radius: 40px 0px 0px 40px;
   background: url("/images/macbook.png") 100% / cover no-repeat;
+}
+
+.elipse1 {
+  position: absolute;
+  left: calc(50% + -125px);
+  top: -170px;
+  z-index: 0;
+
+  width: 300px;
+  height: 294.565px;
+  flex-shrink: 0;
+  border-radius: 300px;
+  background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(255, 68, 211, 0.4) 0%,
+      rgba(255, 253, 253, 0) 98.6%
+    ),
+    rgba(255, 68, 211, 0.1);
+  filter: blur(50px) brightness(1.4);
+}
+
+.elipse2 {
+  width: 350px;
+  height: 343.659px;
+  flex-shrink: 0;
+  border-radius: 350px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #1420ff 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: blur(60px) brightness(0.4);
+
+  position: absolute;
+  left: calc(50% + -90px);
+  top: -260px;
+  z-index: 1;
 }
 
 .imageContainer3::before {
@@ -68,7 +106,7 @@
     rgba(12, 12, 14, 0.15) 76.13%,
     rgba(12, 12, 14, 0.15) 111.73%
   );
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 
@@ -76,7 +114,7 @@
   position: absolute;
   left: 35px;
   top: 19px;
-  z-index: -1;
+  z-index: 2;
 }
 
 @media (max-width: 1400px) {
@@ -98,5 +136,103 @@
   .imageContainer3 {
     left: calc(50% + -65px);
     top: -105px;
+  }
+
+  .elipse1 {
+    top: -70px;
+    width: 270px;
+    height: 265.108px;
+  }
+
+  .elipse2 {
+    top: -120px;
+    width: 315px;
+    height: 309.293px;
+  }
+}
+
+@media (max-width: 900px) {
+  .imageContainer1,
+  .imageContainer2,
+  .imageContainer3 {
+    transform: scale(0.5);
+  }
+
+  .imageContainer1 {
+    left: calc(50% - 260px);
+  }
+
+  .imageContainer2 {
+    left: 50vw;
+    transform: translateX(-50%) scale(0.5);
+  }
+
+  .imageContainer3 {
+    left: calc(50% + -160px);
+    top: -80px;
+  }
+
+  .elipse1 {
+    top: -30px;
+  }
+
+  .elipse2 {
+    top: -120px;
+  }
+}
+
+@media (max-width: 770px) {
+  .imageContainer1,
+  .imageContainer2,
+  .imageContainer3 {
+    transform: scale(0.4);
+  }
+
+  .imageContainer1 {
+    left: calc(50% - 260px);
+  }
+
+  .imageContainer2 {
+    left: 50vw;
+    transform: translateX(-50%) scale(0.5);
+  }
+
+  .imageContainer3 {
+    left: calc(50% + -160px);
+    top: -80px;
+  }
+
+  .elipse1 {
+    top: 0px;
+    width: 218px;
+    height: 214px;
+  }
+
+  .elipse2 {
+    top: 0px;
+    width: 229px;
+    height: 225px;
+  }
+
+  .imagesSection {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .imagesSection {
+    margin-top: 30px;
+  }
+
+  .imagesSection {
+    height: 550px;
+  }
+
+  .elipse1 {
+    top: 10px;
+  }
+
+  .elipse2 {
+    top: -20px;
   }
 }

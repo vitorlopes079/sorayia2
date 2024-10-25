@@ -11,7 +11,7 @@
 
 .imageContainer {
   width: 100%;
-  height: 200px; /* Adjust the height based on the aspect ratio */
+  height: 200px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -35,10 +35,9 @@
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 25px;
   font-weight: 600;
-  line-height: 28px; /* 112% */
+  line-height: 28px;
   margin-bottom: 0.5rem;
-  color: #18181B;
-
+  color: #18181b;
 }
 
 .description {
@@ -46,5 +45,51 @@
   font-size: 15px;
   font-weight: 600;
   line-height: 28px;
-  color: #A1A1AA; /* Using the provided color reference */
+  color: #a1a1aa;
+}
+
+@media (max-width: 770px) {
+  .card {
+    width: 350px;
+    height: auto; 
+      height: 400px;
+
+  }
+
+  .imageContainer {
+    height: 180px; 
+  }
+
+  .title {
+    font-size: 22px; 
+  }
+
+  .description {
+    font-size: 14px; 
+  }
+}
+
+/* Breakpoint for screens below 440px */
+@media (max-width: 440px) {
+  .card {
+    width: 100%;
+    max-width: 350px;
+    
+  }
+
+  .imageContainer {
+    height: 150px; /* Further reduce image height */
+  }
+
+  .content {
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .title {
+    font-size: 20px; /* Further reduce font size for the title */
+  }
+
+  .description {
+    font-size: 13px; /* Further reduce font size for the description */
+  }
 }

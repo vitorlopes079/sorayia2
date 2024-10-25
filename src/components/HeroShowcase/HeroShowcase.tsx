@@ -27,7 +27,6 @@ const HeroShowcase = () => {
             className={styles.image1}
           />
         </div>
-
         <div className={styles.imageContainer2}>
           <Image
             src={"/images/mobile.png"}
@@ -37,7 +36,6 @@ const HeroShowcase = () => {
             className={styles.image2}
           />
         </div>
-
         <div className={styles.imageContainer3}>
           <Image
             src={"/images/screen.jpeg"}
@@ -46,6 +44,12 @@ const HeroShowcase = () => {
             alt="mobile"
             className={styles.image3}
           />
+        </div>
+        <div className={styles.elipse1}>
+        
+        </div>
+        <div className={styles.elipse2}>
+    
         </div>
       </div>
     </div>

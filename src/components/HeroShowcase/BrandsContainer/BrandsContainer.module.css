@@ -1,45 +1,56 @@
-.carousel {
+.brandsContainer {
   width: 100%;
-  overflow: hidden;
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-top: 70px;
 }
 
-.carouselInner {
+.brandsInner {
   display: flex;
-  will-change: transform; 
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
 
 .group {
   display: flex;
-  gap: 50px; 
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
-.duplicateGroup {
-  display: none;
+@media (max-width: 1300px) {
+  .group {
+    transform: scale(0.8);
+    gap: 30px;
+  }
 }
 
-@media (max-width: 1200px) {
-  .duplicateGroup {
-    display: flex; 
+@media (max-width: 1000px) {
+  .group {
+    transform: scale(0.55);
+    gap: 20px;
   }
+}
 
-  .carouselInner {
-    animation: scrolling 20s linear infinite; 
+@media (max-width: 700px) {
+  .group {
+    transform: scale(0.5);
+    gap: 16px;
   }
+}
 
-  @keyframes scrolling {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%); 
-    }
+@media (max-width: 600px) {
+  .group {
+    transform: scale(0.4);
+    gap: 10px;
   }
+}
 
-  .carousel:hover .carouselInner {
-    animation-play-state: paused;
+@media (max-width: 480px) {
+  .group {
+    transform: scale(0.3);
+    gap: 18x;
   }
 }

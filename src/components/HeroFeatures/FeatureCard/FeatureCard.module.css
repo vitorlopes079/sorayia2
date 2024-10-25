@@ -33,3 +33,43 @@
   font-weight: 700;
   margin-right: 4px;
 }
+
+@media (max-width: 1100px) {
+  .featureCard {
+    width: 350px; /* Reduce width */
+    font-size: 14px; /* Decrease font size for smaller screens */
+  }
+
+  .text {
+    font-size: 14px; /* Adjust text font size */
+    line-height: 24px; /* Slightly reduce line height */
+  }
+
+  .bulletPoint {
+    font-size: 20px; /* Adjust bullet point size */
+    margin-left: -12px; /* Reduce left margin */
+  }
+
+  .title {
+    font-size: 14px; /* Reduce title font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .featureCard {
+    width: 380; /* Reduce width */
+  }
+
+  .text {
+    font-size: 13px; /* Smaller font size for better readability */
+    line-height: 22px;
+  }
+
+  .bulletPoint {
+    font-size: 18px; /* Further reduce bullet point size */
+  }
+
+  .title {
+    font-size: 13px; /* Match text size */
+  }
+}

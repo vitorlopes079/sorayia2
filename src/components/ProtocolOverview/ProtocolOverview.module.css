@@ -4,6 +4,7 @@
   color: #fff;
   width: 90%;
   margin: 0 auto;
+  max-width: 1950px;
 }
 
 .protocolSection {
@@ -34,9 +35,6 @@
   height: auto;
 }
 
-.useCasesSection {
-}
-
 .useCasesTitle {
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -53,7 +51,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  justify-items: stretch; /* Make items take up available space */
+  justify-items: stretch;
 }
 
 .useCaseCard {
@@ -85,4 +83,55 @@
 .useCaseDescription {
   font-size: 0.95rem;
   color: #ccc;
+}
+
+@media (max-width: 1000px) {
+  .useCasesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .useCaseCard {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .useCaseCard:nth-child(2),
+  .useCaseCard:nth-child(4) {
+    justify-self: auto;
+  }
+
+  .useCaseCard:nth-child(5) {
+    grid-column: span 1;
+    justify-self: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .useCasesTitle {
+    font-size: 1.5rem;
+  }
+
+  .useCasesSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .useCaseTitle {
+    font-size: 1rem;
+  }
+
+  .useCaseDescription {
+    font-size: 0.85rem;
+  }
+
+  .container {
+    padding: 1.5rem 0;
+  }
 }
