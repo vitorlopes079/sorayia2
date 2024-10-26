@@ -5,7 +5,7 @@
   padding: 10rem 5%;
 }
 
-.innerContent{
+.innerContent {
   max-width: 1950px;
   margin: 0 auto;
 }
@@ -38,6 +38,13 @@
   align-items: center;
   gap: 1rem;
 }
+.ellipse {
+  width: 275px;
+  height: 5.186px;
+  background: linear-gradient(to right, #000000aa, #000, #000000aa);
+  margin: 140px auto 140px auto;
+  border-radius: 50%;
+}
 
 @media (max-width: 1000px) {
   .featuresGrid {
@@ -46,6 +53,10 @@
     align-items: center;
     gap: 60px;
     margin: 80px 0;
+  }
+
+  .ellipse {
+    margin: 60px auto 60px auto;
   }
 
   .container {

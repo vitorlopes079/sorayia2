@@ -2,14 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   max-width: 1950px;
   margin: 80px auto;
+  overflow: hidden;
+  padding: 0 5%; /* Adds padding on the left and right, similar to 90% width */
 }
 
 .col {
   flex: 1;
   padding: 20px;
+  position: relative;
 }
 
 .text {
@@ -30,6 +33,39 @@
   gap: 15px;
 }
 
+.smallEllipse {
+  position: absolute;
+  top: 80px;
+  width: 926px;
+  height: 343px;
+  flex-shrink: 0;
+  border-radius: 926px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(249, 96, 228, 0.4) 23.6%,
+    rgba(75, 57, 147, 0) 100%
+  );
+  filter: blur(90px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.smallEllipse2 {
+  position: absolute;
+  top: 80px;
+
+  width: 521px;
+  height: 260px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    221deg,
+    rgba(21, 42, 223, 0.43) -14.19%,
+    rgba(109, 220, 255, 0) 108.33%
+  );
+  filter: blur(90px);
+  left: 50%;
+  transform: translateX(-50%);
+}
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;

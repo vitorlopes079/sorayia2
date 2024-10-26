@@ -94,6 +94,7 @@ const PowerfulFeatures = () => {
             />
           ))}
         </div>
+        <div className={styles.ellipse}></div>
         <div className={styles.smallerFeaturesGrid}>
           {smallerFeatures.map((feature, index) => (
             <SmallFeature

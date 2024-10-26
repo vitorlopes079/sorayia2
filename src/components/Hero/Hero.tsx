@@ -24,7 +24,10 @@ const Hero = () => {
           Join 2000+ dApps Using Our Personalized Hero&apos;s
         </p>
       </div>
-      <div className={styles.col}></div>
+      <div className={styles.col}>
+        <div className={styles.smallEllipse}></div>
+        <div className={styles.smallEllipse2}></div>
+      </div>
     </div>
   );
 };

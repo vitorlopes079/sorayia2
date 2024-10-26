@@ -49,6 +49,14 @@ const Integration = () => {
             </div>
           ))}
         </div>
+        <div className={`${styles.linesgroup} ${styles.leftLinesGroup}`}>
+          <Image
+            src={"/images/linesgroup.png"}
+            width={379}
+            height={503}
+            alt="lines group"
+          />
+        </div>
         <div className={styles.center}>
           <Image
             src={iconCenter.src}
@@ -56,6 +64,14 @@ const Integration = () => {
             width={100}
             height={100}
             className={styles.centerIcon}
+          />
+        </div>
+        <div className={`${styles.linesgroup} ${styles.rightLinesGroup}`}>
+          <Image
+            src={"/images/linesgroup.png"}
+            width={379}
+            height={503}
+            alt="lines group"
           />
         </div>
         <div className={styles.iconsRight}>
