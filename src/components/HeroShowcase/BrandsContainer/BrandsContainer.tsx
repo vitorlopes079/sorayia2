@@ -63,8 +63,8 @@ const BrandsContainer = () => {
           >
             <Image
               src="/images/openai.png"
-              width={100}
-              height={100}
+              width={50}
+              height={50}
               alt="open ai"
             />
             <p className={styles.brandText}>Open Ai</p>
@@ -81,8 +81,8 @@ const BrandsContainer = () => {
           >
             <Image
               src="/images/etherum.png"
-              width={80}
-              height={80}
+              width={50}
+              height={50}
               alt="Etherum"
             />
             <p className={styles.brandText}>Etherum</p>
