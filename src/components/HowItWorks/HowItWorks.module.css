@@ -101,13 +101,13 @@
   position: relative;
   background-image: url("/images/container-background.png");
   background-size: cover;
-  background-position: 49% 50%;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   margin-left: 4px;
 }
 
 .image {
-  transform: scale(0.4);
+  transform: scale(0.5);
   position: absolute;
 }
 
