@@ -13,7 +13,7 @@
 .brandsInner {
   display: flex;
   align-items: center;
-  gap: 20px; /* Adjusted for better mobile compatibility */
+  gap: 50px;
   will-change: transform;
 }
 
@@ -27,4 +27,12 @@
   font-size: 40px;
   font-weight: 800;
   white-space: nowrap;
+}
+
+.reallusion {
+  margin-right: -90px;
+}
+
+.etherum {
+  margin-right: 52px;
 }
