@@ -15,7 +15,7 @@ const BrandsContainer = () => {
 
   return (
     <div className={styles.brandsContainer}>
-      <Marquee speed={speed} gradient={false} pauseOnHover>
+      <Marquee speed={speed} gradient={false}>
         <div className={styles.brandsInner}>
           <div className={`${styles.brandContainer} ${styles.webgl}`}>
             <Image

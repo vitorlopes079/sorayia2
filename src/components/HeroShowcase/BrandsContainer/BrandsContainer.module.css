@@ -6,15 +6,15 @@
   justify-content: center;
   align-items: center;
   margin-top: 70px;
-  transform: translate3d(0, 0, 0); /* Enable hardware acceleration */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  transform: translate3d(0, 0, 0);
+  -webkit-overflow-scrolling: touch;
 }
 
 .brandsInner {
   display: flex;
   align-items: center;
   gap: 50px;
-  will-change: transform; /* Hint to the browser about the upcoming animation */
+  will-change: transform;
 }
 
 .brandContainer {
