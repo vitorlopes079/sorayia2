@@ -7,6 +7,17 @@
   max-width: 1950px;
 }
 
+.useCasesSection {
+  position: relative;
+}
+
+.imageContainer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 120px;
+}
+
 .protocolSection {
   margin-bottom: 4rem;
 }
@@ -85,9 +96,27 @@
   color: #ccc;
 }
 
+@media (max-width: 1200px) {
+  .imageContainer {
+    display: none;
+  }
+}
+
 @media (max-width: 1000px) {
   .useCasesGrid {
     grid-template-columns: 1fr;
+  }
+
+  .imageContainer {
+    top: -50px;
+    left: auto;
+    right: -40px;
+    display: block;
+  }
+
+  .avatar {
+    height: 145px;
+    width: 145px;
   }
 
   .useCaseCard {
@@ -106,6 +135,13 @@
   }
 }
 
+@media (max-width: 750px) {
+  .avatar {
+    height: 125px;
+    width: 125px;
+    display: none;
+  }
+}
 @media (max-width: 600px) {
   .title {
     font-size: 32px;

@@ -21,6 +21,15 @@ const ProtocolOverview = () => {
         </div>
       </section>
       <section className={styles.useCasesSection}>
+        <div className={styles.imageContainer}>
+          <Image
+            src={"/images/avatar.png"}
+            width={250}
+            height={252}
+            alt="avatar"
+            className={styles.avatar}
+          />
+        </div>
         <h3 className={styles.useCasesTitle}>USE CASES</h3>
         <p className={styles.useCasesSubtitle}>
           Here are some of the ways you can use your Digital Avatar.

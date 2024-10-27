@@ -5,11 +5,36 @@ import Image from "next/image";
 import styles from "./HowItWorks.module.css";
 
 const steps = [
-  { number: "01", title: "Personalize your Heroe" },
-  { number: "02", title: "Import your Data" },
-  { number: "03", title: "Customize behavior" },
-  { number: "04", title: "Embed on your Dapp & Metaverse" },
-  { number: "05", title: "Integrate with your tools" },
+  {
+    number: "01",
+    title: "Personalize your Hero",
+    description:
+      "Personalize every aspect of your 3D Hero to fit your brand’s unique style. Adjust appearance, behavior, and voice, and define how it interacts with users. Create a truly unique experience that aligns perfectly with your vision.",
+  },
+  {
+    number: "02",
+    title: "Import your Data",
+    description:
+      "Integrate text, PDF, and web links into your data pipeline, leveraging a vast array of Web3 data. Extract, process, and embed the information directly into your digital avatar, ensuring precise and data-rich interactions for your users.",
+  },
+  {
+    number: "03",
+    title: "Customize behavior",
+    description:
+      "Make your Digital Avatar blend perfectly into your Dapp with custom colors and logos. Align its personality with your brand through tailored instructions for a consistent and engaging user experience.",
+  },
+  {
+    number: "04",
+    title: "Embed on your Dapp & Metaverse",
+    description:
+      "Integrate your digital avatars effortlessly into your dApp and the metaverse. Enhance user interactions with AI-powered, data-rich avatars that bring a new level of engagement and immersion to your virtual environments.",
+  },
+  {
+    number: "05",
+    title: "Integrate with your tools",
+    description:
+      "Ensure seamless interoperability with your existing tools. Connect your digital avatars to APIs, CRM systems, and Web3 services, enabling smooth data flow and enhanced functionality.",
+  },
 ];
 
 const images = [
@@ -75,10 +100,7 @@ const HowItWorks: React.FC = () => {
                 </span>
               </div>
               {activeIndex === index && (
-                <div className={styles.stepDescription}>
-                  This is a placeholder description for{" "}
-                  {step.title.toLowerCase()}. You can customize this content.
-                </div>
+                <div className={styles.stepDescription}>{step.description}</div>
               )}
             </div>
           ))}

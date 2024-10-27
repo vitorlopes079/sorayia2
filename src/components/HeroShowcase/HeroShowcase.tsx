@@ -20,9 +20,9 @@ const HeroShowcase = () => {
       <div className={styles.imagesSection}>
         <div className={styles.imageContainer1}>
           <Image
-            src={"/images/girl.png"}
-            width={300}
-            height={471}
+            src={"/images/girl2.png"}
+            width={400}
+            height={330}
             alt="girl"
             className={styles.image1}
           />
@@ -39,7 +39,7 @@ const HeroShowcase = () => {
         <div className={styles.imageContainer3}>
           <Image
             src={"/images/screen.jpeg"}
-            width={636}
+            width={635}
             height={508}
             alt="mobile"
             className={styles.image3}
