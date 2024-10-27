@@ -1,27 +1,30 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
 import styles from "./BrandsContainer.module.css";
 
 const BrandsContainer = () => {
-  // Detect if the device is an iOS device
-  const isIOS =
-    typeof window !== "undefined" &&
-    /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const speed = isIOS ? 60 : 120; // Slower speed on iOS for smoother performance
+  // Detect if the screen width is mobile size at initial load
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Set the breakpoint for mobile
+    };
+
+    handleResize(); // Check on initial load
+    window.addEventListener("resize", handleResize); // Update on resize
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const speed = isMobile ? 60 : 120; // Slower speed on mobile for smoother performance
 
   return (
     <div className={styles.brandsContainer}>
-      <Marquee
-        speed={speed}
-        gradient={false}
-        pauseOnHover
-        loop={0}
-        style={{ whiteSpace: "nowrap" }}
-      >
+      <Marquee speed={speed} gradient={false} pauseOnHover loop={0}>
         <div className={styles.brandsInner}>
           <div
             key="webgl"
@@ -29,8 +32,8 @@ const BrandsContainer = () => {
           >
             <Image
               src="/images/WebGl.png"
-              width={150}
-              height={63}
+              width={isMobile ? 75 : 150} // Half the size on mobile
+              height={isMobile ? 31 : 63}
               alt="webgl"
             />
           </div>
@@ -40,8 +43,8 @@ const BrandsContainer = () => {
           >
             <Image
               src="/images/unity.png"
-              width={226}
-              height={88}
+              width={isMobile ? 113 : 226} // Half the size on mobile
+              height={isMobile ? 44 : 88}
               alt="unity"
             />
           </div>
@@ -63,8 +66,8 @@ const BrandsContainer = () => {
           >
             <Image
               src="/images/openai.png"
-              width={50}
-              height={50}
+              width={isMobile ? 50 : 100} // Half the size on mobile
+              height={isMobile ? 50 : 100}
               alt="open ai"
             />
             <p className={styles.brandText}>Open Ai</p>
@@ -81,8 +84,8 @@ const BrandsContainer = () => {
           >
             <Image
               src="/images/etherum.png"
-              width={50}
-              height={50}
+              width={isMobile ? 40 : 80} // Half the size on mobile
+              height={isMobile ? 40 : 80}
               alt="Etherum"
             />
             <p className={styles.brandText}>Etherum</p>
