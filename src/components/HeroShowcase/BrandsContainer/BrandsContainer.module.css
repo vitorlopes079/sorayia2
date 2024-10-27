@@ -13,7 +13,7 @@
 .brandsInner {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 20px; /* Adjusted for better mobile compatibility */
   will-change: transform;
 }
 

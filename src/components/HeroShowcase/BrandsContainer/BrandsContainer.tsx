@@ -15,9 +15,18 @@ const BrandsContainer = () => {
 
   return (
     <div className={styles.brandsContainer}>
-      <Marquee speed={speed} gradient={false}>
+      <Marquee
+        speed={speed}
+        gradient={false}
+        pauseOnHover
+        loop={0}
+        style={{ whiteSpace: "nowrap" }}
+      >
         <div className={styles.brandsInner}>
-          <div className={`${styles.brandContainer} ${styles.webgl}`}>
+          <div
+            key="webgl"
+            className={`${styles.brandContainer} ${styles.webgl}`}
+          >
             <Image
               src="/images/WebGl.png"
               width={150}
@@ -25,7 +34,10 @@ const BrandsContainer = () => {
               alt="webgl"
             />
           </div>
-          <div className={`${styles.brandContainer} ${styles.unity}`}>
+          <div
+            key="unity"
+            className={`${styles.brandContainer} ${styles.unity}`}
+          >
             <Image
               src="/images/unity.png"
               width={226}
@@ -33,7 +45,10 @@ const BrandsContainer = () => {
               alt="unity"
             />
           </div>
-          <div className={`${styles.brandContainer} ${styles.unreal}`}>
+          <div
+            key="unreal"
+            className={`${styles.brandContainer} ${styles.unreal}`}
+          >
             <Image
               src="/images/Unreal Engine.png"
               width={318}
@@ -41,7 +56,10 @@ const BrandsContainer = () => {
               alt="Unreal Engine"
             />
           </div>
-          <div className={`${styles.brandContainer} ${styles.reallusion}`}>
+          <div
+            key="reallusion"
+            className={`${styles.brandContainer} ${styles.reallusion}`}
+          >
             <Image
               src="/images/reallusion.png"
               width={448}
@@ -49,7 +67,10 @@ const BrandsContainer = () => {
               alt="reallusion"
             />
           </div>
-          <div className={`${styles.brandContainer} ${styles.openai}`}>
+          <div
+            key="openai"
+            className={`${styles.brandContainer} ${styles.openai}`}
+          >
             <Image
               src="/images/openai.png"
               width={100}
@@ -58,10 +79,16 @@ const BrandsContainer = () => {
             />
             <p className={styles.brandText}>Open Ai</p>
           </div>
-          <div className={`${styles.brandContainer} ${styles.elevenLabs}`}>
+          <div
+            key="elevenLabs"
+            className={`${styles.brandContainer} ${styles.elevenLabs}`}
+          >
             <p className={styles.brandText}>IIElevenLabs</p>
           </div>
-          <div className={`${styles.brandContainer} ${styles.etherum}`}>
+          <div
+            key="etherum"
+            className={`${styles.brandContainer} ${styles.etherum}`}
+          >
             <Image
               src="/images/etherum.png"
               width={80}
