@@ -62,8 +62,8 @@ const BrandsContainer = () => {
           >
             <Image
               src="/images/reallusion.png"
-              width={448}
-              height={69}
+              width={224} // Try half of the original width
+              height={35} // Try half of the original height
               alt="reallusion"
             />
           </div>
