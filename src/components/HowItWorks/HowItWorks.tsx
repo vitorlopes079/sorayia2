@@ -38,11 +38,11 @@ const steps = [
 ];
 
 const images = [
-  "/images/placeholder.png",
-  "/images/placeholder.png",
-  "/images/placeholder.png",
-  "/images/placeholder.png",
-  "/images/placeholder.png",
+  "/images/placeholder1.jpg",
+  "/images/placeholder2.jpg",
+  "/images/placeholder3.jpg",
+  "/images/placeholder4.jpg",
+  "/images/placeholder5.jpg",
 ];
 
 const HowItWorks: React.FC = () => {
@@ -56,7 +56,7 @@ const HowItWorks: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -121,6 +121,7 @@ const HowItWorks: React.FC = () => {
                   sizes="100vw"
                   style={{ objectFit: "cover" }}
                   priority
+                  className={styles.image}
                 />
               </div>
             ))}
