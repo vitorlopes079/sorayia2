@@ -14,8 +14,7 @@
   display: flex;
   align-items: center;
   gap: 50px;
-    will-change: transform; /* Hint to the browser about the upcoming animation */
-
+  will-change: transform; /* Hint to the browser about the upcoming animation */
 }
 
 .brandContainer {
@@ -28,12 +27,4 @@
   font-size: 40px;
   font-weight: 800;
   white-space: nowrap;
-}
-
-.reallusion {
-  margin-right: -90px;
-}
-
-.etherum {
-  margin-right: 52px;
 }
