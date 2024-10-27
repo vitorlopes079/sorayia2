@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
-import Image from "next/image";
 import styles from "./BrandsContainer.module.css";
 
 const BrandsContainer = () => {
@@ -30,7 +29,7 @@ const BrandsContainer = () => {
             key="webgl"
             className={`${styles.brandContainer} ${styles.webgl}`}
           >
-            <Image
+            <img
               src="/images/WebGl.png"
               width={isMobile ? 75 : 150} // Half the size on mobile
               height={isMobile ? 31 : 63}
@@ -41,7 +40,7 @@ const BrandsContainer = () => {
             key="unity"
             className={`${styles.brandContainer} ${styles.unity}`}
           >
-            <Image
+            <img
               src="/images/unity.png"
               width={isMobile ? 113 : 226} // Half the size on mobile
               height={isMobile ? 44 : 88}
@@ -64,7 +63,7 @@ const BrandsContainer = () => {
             key="openai"
             className={`${styles.brandContainer} ${styles.openai}`}
           >
-            <Image
+            <img
               src="/images/openai.png"
               width={isMobile ? 50 : 100} // Half the size on mobile
               height={isMobile ? 50 : 100}
@@ -82,7 +81,7 @@ const BrandsContainer = () => {
             key="etherum"
             className={`${styles.brandContainer} ${styles.etherum}`}
           >
-            <Image
+            <img
               src="/images/etherum.png"
               width={isMobile ? 40 : 80} // Half the size on mobile
               height={isMobile ? 40 : 80}
