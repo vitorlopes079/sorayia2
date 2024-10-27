@@ -49,12 +49,7 @@ const BrandsContainer = () => {
             key="unreal"
             className={`${styles.brandContainer} ${styles.unreal}`}
           >
-            <Image
-              src="/images/Unreal Engine.png"
-              width={318}
-              height={85}
-              alt="Unreal Engine"
-            />
+            <p className={styles.brandText}>Unreal Engine</p>
           </div>
           <div
             key="reallusion"
