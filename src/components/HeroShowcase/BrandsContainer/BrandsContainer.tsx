@@ -6,9 +6,12 @@ import Image from "next/image";
 import styles from "./BrandsContainer.module.css";
 
 const BrandsContainer = () => {
-  // Dynamically set the speed for different screen sizes
-  const speed =
-    typeof window !== "undefined" && window.innerWidth < 768 ? 60 : 120;
+  // Detect if the device is an iOS device
+  const isIOS =
+    typeof window !== "undefined" &&
+    /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+  const speed = isIOS ? 60 : 120; // Slower speed on iOS for smoother performance
 
   return (
     <div className={styles.brandsContainer}>
