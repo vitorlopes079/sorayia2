@@ -34,31 +34,32 @@ const logos = [
 const BrandsContainer: React.FC = () => {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const scroller = scrollerRef.current;
-    if (!scroller) return;
+useEffect(() => {
+  const scroller = scrollerRef.current;
+  if (!scroller) return;
 
-    // Check for reduced motion preference
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      scroller.setAttribute("data-animated", "true");
+  console.log("Scroller detected on mobile:", scroller);
 
-      const scrollerInner = scroller.querySelector<HTMLDivElement>(
-        `.${styles.brandsInner}`
-      );
-      if (!scrollerInner) return;
+  // Check for reduced motion preference
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    scroller.setAttribute("data-animated", "true");
 
-      const scrollerContent = Array.from(scrollerInner.children);
+    const scrollerInner = scroller.querySelector(`.${styles.brandsInner}`);
+    if (!scrollerInner) return;
 
-      // Duplicate items for continuous scrolling
-      scrollerContent.forEach((item) => {
-        // Cast item to HTMLElement
-        const element = item as HTMLElement;
-        const duplicatedItem = element.cloneNode(true) as HTMLElement;
-        duplicatedItem.setAttribute("aria-hidden", "true");
-        scrollerInner.appendChild(duplicatedItem);
-      });
-    }
-  }, []);
+    console.log("Scroller inner found, setting up animation.");
+
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // Duplicate items for continuous scrolling
+    scrollerContent.forEach((item) => {
+      const element = item as HTMLElement;
+      const duplicatedItem = element.cloneNode(true) as HTMLElement;
+      duplicatedItem.setAttribute("aria-hidden", "true");
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  }
+}, []);
 
   return (
     <div className={styles.scroller} data-speed="fast" ref={scrollerRef}>

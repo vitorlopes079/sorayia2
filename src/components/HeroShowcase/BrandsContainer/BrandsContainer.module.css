@@ -43,3 +43,9 @@
   white-space: nowrap;
 }
 
+@media (max-width: 600px) {
+  .brandsInner {
+    animation: scroll var(--animation-duration, 20s) linear infinite;
+    animation-timing-function: linear;
+  }
+}

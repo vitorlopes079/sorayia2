@@ -53,12 +53,10 @@
   transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Change color to white when menu is open */
 .hamburgerActive .bar {
   background-color: black;
 }
 
-/* Mobile-specific styles */
 @media (max-width: 1000px) {
   .links {
     display: flex;
