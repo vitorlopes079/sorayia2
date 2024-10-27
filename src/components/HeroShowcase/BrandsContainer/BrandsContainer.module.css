@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 70px;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 .brandsInner {
@@ -30,6 +31,6 @@
   margin-right: -90px;
 }
 
-.etherum{
+.etherum {
   margin-right: 52px;
 }

@@ -6,9 +6,13 @@ import Image from "next/image";
 import styles from "./BrandsContainer.module.css";
 
 const BrandsContainer = () => {
+  // Dynamically set the speed for different screen sizes
+  const speed =
+    typeof window !== "undefined" && window.innerWidth < 768 ? 60 : 120;
+
   return (
     <div className={styles.brandsContainer}>
-      <Marquee speed={120} gradient={false} pauseOnHover>
+      <Marquee speed={speed} gradient={false} pauseOnHover>
         <div className={styles.brandsInner}>
           <div className={`${styles.brandContainer} ${styles.webgl}`}>
             <Image
