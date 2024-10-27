@@ -38,11 +38,11 @@ const steps = [
 ];
 
 const images = [
-  "/images/placeholder1.jpg",
-  "/images/placeholder2.jpg",
-  "/images/placeholder3.jpg",
-  "/images/placeholder4.jpg",
-  "/images/placeholder5.jpg",
+  "/images/placeholder.png",
+  "/images/placeholder.png",
+  "/images/placeholder.png",
+  "/images/placeholder.png",
+  "/images/placeholder.png",
 ];
 
 const HowItWorks: React.FC = () => {

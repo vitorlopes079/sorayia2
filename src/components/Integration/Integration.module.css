@@ -1,6 +1,6 @@
 .container {
   color: #fff;
-  margin: 120px auto;
+  margin: 50px auto;
   width: 90%;
   max-width: 1950px;
 }
@@ -23,182 +23,17 @@
 }
 
 .integrationWrapper {
+  width: 100%;
+  overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  width: 80%;
-  margin: 120px auto;
-  height: 550px;
+  justify-content: center;
+  max-width: 1238px;
+  margin: 80px auto;
 }
 
-.iconsLeft,
-.iconsRight {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  height: 100%;
-}
-
-.iconWrapper {
-  position: relative;
-}
-
-.center {
-  position: relative;
-  z-index: 1;
-}
-
-.centerIcon {
-  width: 100px;
-  height: 100px;
-}
-
-.icon {
-  width: 50px;
-  height: 50px;
-}
-
-/* Custom positioning for left icons */
-.iconLeft1 {
-  top: 0;
-  left: 0;
-}
-
-.iconLeft2 {
-  top: 35px;
-  left: 30px;
-}
-
-.iconLeft3 {
-  top: 70px;
-  left: 60px;
-}
-
-.iconLeft4 {
-  top: 105px;
-  left: 30px;
-}
-
-.iconLeft5 {
-  top: 140px;
-  left: 0;
-}
-
-/* Custom positioning for right icons */
-.iconRight1 {
-  top: 0;
-  right: 0;
-}
-
-.iconRight2 {
-  top: 35px;
-  right: 30px;
-}
-
-.iconRight3 {
-  top: 70px;
-  right: 60px;
-}
-
-.iconRight4 {
-  top: 105px;
-  right: 30px;
-}
-
-.iconRight5 {
-  top: 140px;
-  right: 0;
-}
-
-.leftLinesGroup {
-  transform: rotate(180deg);
-}
-
-.rightLinesGroup{
-  margin-bottom: 22px;
-}
-
-@media (max-width: 1800px) {
-  .integrationWrapper {
-    width: 90%;
-  }
-}
-
-@media (max-width: 1500px) {
-  .integrationWrapper {
-    width: 100%;
-  }
-}
-
-@media (max-width: 1200px) {
-  .linesgroup {
-    display: none;
-  }
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-  .integrationWrapper {
-    flex-direction: column;
-  }
-
-  .iconsLeft,
-  .iconsRight {
-    flex-direction: row;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .iconLeft1 {
-    top: 0;
-    left: 0;
-  }
-
-  .iconLeft2 {
-    top: 50px;
-    left: 10px;
-  }
-
-  .iconLeft3 {
-    top: 100px;
-    left: 20px;
-  }
-
-  .iconLeft4 {
-    top: 150px;
-    left: 30px;
-  }
-
-  .iconLeft5 {
-    top: 200px;
-    left: 40px;
-  }
-
-  .iconRight1 {
-    top: 0;
-    right: 0;
-  }
-
-  .iconRight2 {
-    top: 50px;
-    right: 10px;
-  }
-
-  .iconRight3 {
-    top: 100px;
-    right: 20px;
-  }
-
-  .iconRight4 {
-    top: 150px;
-    right: 30px;
-  }
-
-  .iconRight5 {
-    top: 200px;
-    right: 40px;
-  }
+.image {
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 600px) {
@@ -208,65 +43,5 @@
 
   .subtitle {
     font-size: 16px; /* Smaller font size for subtitle */
-  }
-
-  .icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .centerIcon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .iconLeft1 {
-    top: 0;
-    left: 0;
-  }
-
-  .iconLeft2 {
-    top: 50px;
-    left: 2px;
-  }
-
-  .iconLeft3 {
-    top: 100px;
-    left: 4px;
-  }
-
-  .iconLeft4 {
-    top: 150px;
-    left: 6px;
-  }
-
-  .iconLeft5 {
-    top: 200px;
-    left: 8px;
-  }
-
-  .iconRight1 {
-    top: 0;
-    right: 0;
-  }
-
-  .iconRight2 {
-    top: 50px;
-    right: 2px;
-  }
-
-  .iconRight3 {
-    top: 100px;
-    right: 4px;
-  }
-
-  .iconRight4 {
-    top: 150px;
-    right: 6px;
-  }
-
-  .iconRight5 {
-    top: 200px;
-    right: 8px;
   }
 }
