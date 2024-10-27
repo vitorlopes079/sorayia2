@@ -27,26 +27,53 @@ const Header = () => {
         <h4 className={styles.logoText}>SORAYIA.COM</h4>
       </div>
       <div className={`${styles.links} ${menuOpen ? styles.showMenu : ""}`}>
-        <Link href={"/"} className={styles.link}>
+        <Link
+          href={"/"}
+          className={styles.link}
+          onClick={() => setMenuOpen(false)}
+        >
           Features
         </Link>
-        <Link href={"/"} className={styles.link}>
+        <Link
+          href={"/"}
+          className={styles.link}
+          onClick={() => setMenuOpen(false)}
+        >
           Community
         </Link>
-        <Link href={"/"} className={styles.link}>
+        <Link
+          href={"/"}
+          className={styles.link}
+          onClick={() => setMenuOpen(false)}
+        >
           Pricing
         </Link>
-        <Link href={"/"} className={styles.link}>
+        <Link
+          href={"/"}
+          className={styles.link}
+          onClick={() => setMenuOpen(false)}
+        >
           Learn
         </Link>
       </div>
       <div className={styles.buttonsContainer}>
         <ButtonFilled text={"Login"} isHeader={true} />
         <ButtonEmpty text={"Get Started"} isHeader={true} />
-        <div className={styles.hamburger} onClick={toggleMenu}>
-          <div className={styles.bar}></div>
-          <div className={styles.bar}></div>
-          <div className={styles.bar}></div>
+        <div
+          className={`${styles.hamburger} ${
+            menuOpen ? styles.hamburgerActive : ""
+          }`}
+          onClick={toggleMenu}
+        >
+          <div
+            className={`${styles.bar} ${menuOpen ? styles.barOpen : ""}`}
+          ></div>
+          <div
+            className={`${styles.bar} ${menuOpen ? styles.barOpen : ""}`}
+          ></div>
+          <div
+            className={`${styles.bar} ${menuOpen ? styles.barOpen : ""}`}
+          ></div>
         </div>
       </div>
     </div>

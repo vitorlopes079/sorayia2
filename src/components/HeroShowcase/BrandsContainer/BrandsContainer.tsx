@@ -1,217 +1,86 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./BrandsContainer.module.css";
 
-const BrandsContainer = () => {
+const logos = [
+  { src: "/images/WebGl.png", width: 150, height: 63, alt: "webgl" },
+  { src: "/images/unity.png", width: 226, height: 88, alt: "unity" },
+  {
+    src: "/images/Unreal Engine.png",
+    width: 318,
+    height: 85,
+    alt: "Unreal Engine",
+  },
+  { src: "/images/reallusion.png", width: 448, height: 69, alt: "reallusion" },
+  {
+    src: "/images/openai.png",
+    width: 100,
+    height: 100,
+    alt: "open ai",
+    text: "Open Ai",
+  },
+  { text: "IIElevenLabs" },
+  {
+    src: "/images/etherum.png",
+    width: 80,
+    height: 80,
+    alt: "Etherum",
+    text: "Etherum",
+  },
+];
+
+const BrandsContainer: React.FC = () => {
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+
+    // Check for reduced motion preference
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      scroller.setAttribute("data-animated", "true");
+
+      const scrollerInner = scroller.querySelector<HTMLDivElement>(
+        `.${styles.brandsInner}`
+      );
+      if (!scrollerInner) return;
+
+      const scrollerContent = Array.from(scrollerInner.children);
+
+      // Duplicate items for continuous scrolling
+      scrollerContent.forEach((item) => {
+        // Cast item to HTMLElement
+        const element = item as HTMLElement;
+        const duplicatedItem = element.cloneNode(true) as HTMLElement;
+        duplicatedItem.setAttribute("aria-hidden", "true");
+        scrollerInner.appendChild(duplicatedItem);
+      });
+    }
+  }, []);
+
   return (
-    <div className={styles.brandsContainer}>
+    <div className={styles.scroller} data-speed="fast" ref={scrollerRef}>
       <div className={styles.brandsInner}>
-        <div className={styles.group}>
-          {/* First set of logos */}
-          <Image
-            src={"/images/WebGl.png"}
-            width={150}
-            height={63}
-            alt="webgl"
-          />
-          <Image
-            src={"/images/unity.png"}
-            width={226}
-            height={88}
-            alt="unity"
-          />
-          <Image
-            src={"/images/Unreal Engine.png"}
-            width={318}
-            height={85}
-            alt="Unreal Engine"
-          />
-          <Image
-            src={"/images/reallusion.png"}
-            width={448}
-            height={69}
-            alt="reallusion"
-            className={styles.realIluusion}
-          />
-
-          <div className={styles.brandContainer}>
-            <Image
-              src={"/images/openai.png"}
-              width={100}
-              height={100}
-              alt="open ai"
-            />
-            <p className={styles.brandText}>Open Ai</p>
+        {logos.map((logo, index) => (
+          <div
+            key={index}
+            className={`${styles.brandContainer} ${
+              logo.alt === "reallusion" ? styles.realIluusion : ""
+            }`}
+          >
+            {logo.src && (
+              <Image
+                src={logo.src}
+                width={logo.width}
+                height={logo.height}
+                alt={logo.alt}
+              />
+            )}
+            {logo.text && <p className={styles.brandText}>{logo.text}</p>}
           </div>
-
-          <div className={styles.brandContainer}>
-            <p className={styles.brandText}>IIElevenLabs</p>
-          </div>
-
-          <div className={styles.brandContainer}>
-            <Image
-              src={"/images/etherum.png"}
-              width={80}
-              height={80}
-              alt="Etherum"
-            />
-            <p className={styles.brandText}>Etherum</p>
-          </div>
-
-          {/* Second set of logos */}
-          <Image
-            src={"/images/WebGl.png"}
-            width={150}
-            height={63}
-            alt="webgl"
-          />
-          <Image
-            src={"/images/unity.png"}
-            width={226}
-            height={88}
-            alt="unity"
-          />
-          <Image
-            src={"/images/Unreal Engine.png"}
-            width={318}
-            height={85}
-            alt="Unreal Engine"
-            className={styles.unreal}
-          />
-          <Image
-            src={"/images/reallusion.png"}
-            width={448}
-            height={69}
-            alt="reallusion"
-            className={styles.realIluusion}
-          />
-
-          <div className={styles.brandContainer}>
-            <Image
-              src={"/images/openai.png"}
-              width={100}
-              height={100}
-              alt="open ai"
-            />
-            <p className={styles.brandText}>Open Ai</p>
-          </div>
-
-          <div className={styles.brandContainer}>
-            <p className={styles.brandText}>IIElevenLabs</p>
-          </div>
-
-          <div className={styles.brandContainer}>
-            <Image
-              src={"/images/etherum.png"}
-              width={80}
-              height={80}
-              alt="Etherum"
-            />
-            <p className={styles.brandText}>Etherum</p>
-          </div>
-
-          {/* Third set of logos */}
-          <Image
-            src={"/images/WebGl.png"}
-            width={150}
-            height={63}
-            alt="webgl"
-          />
-          <Image
-            src={"/images/unity.png"}
-            width={226}
-            height={88}
-            alt="unity"
-          />
-          <Image
-            src={"/images/Unreal Engine.png"}
-            width={318}
-            height={85}
-            alt="Unreal Engine"
-          />
-          <Image
-            src={"/images/reallusion.png"}
-            width={448}
-            height={69}
-            alt="reallusion"
-            className={styles.realIluusion}
-          />
-
-          <div className={styles.brandContainer}>
-            <Image
-              src={"/images/openai.png"}
-              width={100}
-              height={100}
-              alt="open ai"
-            />
-            <p className={styles.brandText}>Open Ai</p>
-          </div>
-
-          <div className={styles.brandContainer}>
-            <p className={styles.brandText}>IIElevenLabs</p>
-          </div>
-
-          <div className={styles.brandContainer}>
-            <Image
-              src={"/images/etherum.png"}
-              width={80}
-              height={80}
-              alt="Etherum"
-            />
-            <p className={styles.brandText}>Etherum</p>
-          </div>
-
-          {/* Third set of logos */}
-          <Image
-            src={"/images/WebGl.png"}
-            width={150}
-            height={63}
-            alt="webgl"
-          />
-          <Image
-            src={"/images/unity.png"}
-            width={226}
-            height={88}
-            alt="unity"
-          />
-          <Image
-            src={"/images/Unreal Engine.png"}
-            width={318}
-            height={85}
-            alt="Unreal Engine"
-          />
-          <Image
-            src={"/images/reallusion.png"}
-            width={448}
-            height={69}
-            alt="reallusion"
-            className={styles.realIluusion}
-          />
-
-          <div className={styles.brandContainer}>
-            <Image
-              src={"/images/openai.png"}
-              width={100}
-              height={100}
-              alt="open ai"
-            />
-            <p className={styles.brandText}>Open Ai</p>
-          </div>
-
-          <div className={styles.brandContainer}>
-            <p className={styles.brandText}>IIElevenLabs</p>
-          </div>
-
-          <div className={styles.brandContainer}>
-            <Image
-              src={"/images/etherum.png"}
-              width={80}
-              height={80}
-              alt="Etherum"
-            />
-            <p className={styles.brandText}>Etherum</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

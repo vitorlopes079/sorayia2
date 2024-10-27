@@ -1,8 +1,11 @@
+/* Header.module.css */
+
 .header {
   display: flex;
   justify-content: space-between;
   padding: 20px 35px;
   position: relative;
+  align-items: center;
 }
 
 .logo {
@@ -15,6 +18,7 @@
   display: flex;
   gap: 70px;
   align-items: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .link {
@@ -25,8 +29,8 @@
 }
 
 .link:hover {
-  transform: scale(1.1); /* Slightly enlarges the link */
-  color: #fff; /* Optional: change color on hover */
+  transform: scale(1.1);
+  color: #fff;
 }
 
 .buttonsContainer {
@@ -39,38 +43,77 @@
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  z-index: 201;
 }
 
 .bar {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: #fff; /* Default color */
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Change color to white when menu is open */
+.hamburgerActive .bar {
+  background-color: black;
+}
+
+/* Mobile-specific styles */
 @media (max-width: 1000px) {
   .links {
-    display: none;
+    display: flex;
     flex-direction: column;
-    gap: 20px;
-    position: absolute;
-    top: 60px;
-    right: 35px;
-    background: #222;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    
+    padding: 80px 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    z-index: 200;
+    transform: translateY(-100%);
+    opacity: 0;
+    overflow: hidden;
+    transition: transform 0.5s ease, opacity 0.5s ease;
   }
 
   .showMenu {
-    display: flex;
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .hamburger {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+  }
+
+  .link {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .link:hover {
+    transform: scale(1.1);
+    color: black;
+  }
+
+  .barOpen:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .barOpen:nth-child(2) {
+    opacity: 0;
+  }
+
+  .barOpen:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 }
 
@@ -94,12 +137,12 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 12px;
-    position: relative;
   }
 
   .buttonsContainer {
     gap: 8px;
   }
+
   .logoImage {
     width: 24px;
     height: 26px;
@@ -112,7 +155,5 @@
   .bar {
     width: 25px;
     height: 2px;
-    background-color: white;
-    margin-left: 4px;
   }
 }

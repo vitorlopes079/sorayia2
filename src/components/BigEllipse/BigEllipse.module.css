@@ -3,10 +3,15 @@
   height: 1213px;
   flex-shrink: 0;
   border-radius: 2009px;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(119, 96, 249, 0.45) 0%, rgba(75, 57, 147, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(119, 96, 249, 0.45) 0%,
+    rgba(75, 57, 147, 0) 100%
+  );
   filter: blur(90px);
   position: absolute;
   top: -770px;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none;
 }
