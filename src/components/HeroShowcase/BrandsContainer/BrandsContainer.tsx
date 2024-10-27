@@ -60,12 +60,7 @@ const BrandsContainer = () => {
             key="reallusion"
             className={`${styles.brandContainer} ${styles.reallusion}`}
           >
-            <Image
-              src="/images/reallusion.png"
-              width={224} // Try half of the original width
-              height={35} // Try half of the original height
-              alt="reallusion"
-            />
+            <p className={styles.brandText}>Reallusion</p>
           </div>
           <div
             key="openai"
