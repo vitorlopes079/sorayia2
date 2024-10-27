@@ -1,34 +1,17 @@
 /* BrandsContainer.module.css */
-.scroller {
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
+.brandsContainer {
   width: 100%;
-  margin: 100px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
 }
 
 .brandsInner {
   display: flex;
-  gap: 2rem;
-  flex-wrap: nowrap; /* Make sure no wrapping occurs */
-  animation: scroll var(--animation-duration, 15s) linear infinite;
-}
-
-.scroller[data-animated="true"] .brandsInner {
-  width: max-content;
-}
-
-.realIluusion {
-  margin-right: -90px;
-}
-
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  align-items: center;
+  gap: 50px;
 }
 
 .brandContainer {
@@ -43,9 +26,10 @@
   white-space: nowrap;
 }
 
-@media (max-width: 600px) {
-  .brandsInner {
-    animation: scroll var(--animation-duration, 20s) linear infinite;
-    animation-timing-function: linear;
-  }
+.reallusion {
+  margin-right: -90px;
+}
+
+.etherum{
+  margin-right: 52px;
 }

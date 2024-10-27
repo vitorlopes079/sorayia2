@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800&display=swap");
+
 *,
 *::before,
 *::after {
@@ -11,7 +13,8 @@ html {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', 'Red Hat Display', Arial, Helvetica, sans-serif;
+  font-family: "Plus Jakarta Sans", "Red Hat Display", Arial, Helvetica,
+    sans-serif;
   font-size: 16px;
   line-height: 1.6;
   background-color: #000;
@@ -54,32 +57,36 @@ nextjs-portal {
 }
 
 @font-face {
-  font-family: 'Plus Jakarta Sans';
-  src: url('/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Plus Jakarta Sans';
-  src: url('/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf') format('truetype');
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf")
+    format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Red Hat Display';
   src: url('/fonts/Red_Hat_Display/static/RedHatDisplay-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
+
 
 @font-face {
   font-family: 'Red Hat Display';
   src: url('/fonts/Red_Hat_Display/static/RedHatDisplay-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
-}
+} */
 
 @media (max-width: 768px) {
   body > * {
