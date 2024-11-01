@@ -16,3 +16,10 @@
   pointer-events: none;
   z-index: 20;
 }
+
+@media (max-width: 768px) {
+  .bigEllipse {
+    width: 1305.85px;
+    height: 788.45px;
+  }
+}

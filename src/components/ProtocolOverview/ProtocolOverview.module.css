@@ -11,11 +11,25 @@
   position: relative;
 }
 
-.imageContainer {
+.videoContainer {
   position: absolute;
+  width: 213px;
+  height: 230px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 20px 20px 0px 20px;
   left: 50%;
   transform: translateX(-50%);
   top: 120px;
+}
+
+.zoomedVideo {
+  position: absolute;
+  top: 130px;
+  right: -150px;
+  height: 500px;
+  width: 500px;
+  transform: rotate(90deg) scale(1.5);
 }
 
 .protocolSection {
@@ -96,22 +110,23 @@
   color: #ccc;
 }
 
-@media (max-width: 1200px) {
-  .imageContainer {
-    display: none;
-  }
-}
-
 @media (max-width: 1000px) {
   .useCasesGrid {
     grid-template-columns: 1fr;
   }
 
-  .imageContainer {
-    top: -50px;
-    left: auto;
-    right: -40px;
-    display: block;
+  .videoContainer {
+    position: relative;
+    width: 149px;
+    height: 161px;
+    left: 50%;
+    top: -40px;
+  }
+
+  .zoomedVideo {
+    top: 40px;
+    right: -180px;
+    transform: rotate(90deg) scale(1.2);
   }
 
   .avatar {

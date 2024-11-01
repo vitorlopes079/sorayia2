@@ -21,14 +21,11 @@ const ProtocolOverview = () => {
         </div>
       </section>
       <section className={styles.useCasesSection}>
-        <div className={styles.imageContainer}>
-          <Image
-            src={"/images/avatar.png"}
-            width={250}
-            height={252}
-            alt="avatar"
-            className={styles.avatar}
-          />
+        <div className={styles.videoContainer}>
+          <video className={styles.zoomedVideo} autoPlay muted loop playsInline>
+            <source src="/videos/avatar.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
         <h3 className={styles.useCasesTitle}>USE CASES</h3>
         <p className={styles.useCasesSubtitle}>
