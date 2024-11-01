@@ -204,7 +204,8 @@
   .imageContainer3 {
     left: calc(50% + -160px);
     top: -80px;
-    max-width: 630px;
+    max-width: 632px;
+    border-radius: 25npmpx 0px 0px 25px;
   }
 
   .elipse1 {

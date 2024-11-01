@@ -25,6 +25,17 @@ const Hero = () => {
         </p>
       </div>
       <div className={styles.col}>
+        <video
+          width="100%"
+          className={styles.zoomedVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className={styles.smallEllipse}></div>
         <div className={styles.smallEllipse2}></div>
       </div>

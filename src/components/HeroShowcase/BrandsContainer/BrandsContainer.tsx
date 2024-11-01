@@ -8,7 +8,6 @@ const BrandsContainer = () => {
   const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
-    // Detect if the device is an iOS device
     if (
       typeof navigator !== "undefined" &&
       /iPad|iPhone|iPod/.test(navigator.userAgent)
@@ -17,7 +16,7 @@ const BrandsContainer = () => {
     }
   }, []);
 
-  const speed = isIOS ? 60 : 120; // Slower speed on iOS for smoother performance
+  const speed = isIOS ? 60 : 120; 
 
   return (
     <div className={styles.brandsContainer}>
