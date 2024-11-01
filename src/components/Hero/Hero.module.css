@@ -6,7 +6,7 @@
   max-width: 1950px;
   margin: 80px auto;
   overflow: hidden;
-  padding: 0 5%; /* Adds padding on the left and right, similar to 90% width */
+  padding: 0 5%; 
 }
 
 .col {
@@ -36,7 +36,7 @@
 
 .smallEllipse {
   position: absolute;
-  top: 180px;
+  top: 240px;
   width: 521px;
   height: 260px;
   flex-shrink: 0;
@@ -54,7 +54,7 @@
 
 .smallEllipse2 {
   position: absolute;
-  top: 180px;
+  top: 240px;
   width: 321px;
   height: 260px;
   flex-shrink: 0;
