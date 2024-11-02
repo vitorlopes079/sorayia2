@@ -18,15 +18,6 @@ const HeroShowcase = () => {
       <BrandsContainer />
 
       <div className={styles.imagesSection}>
-        <div className={styles.imageContainer1}>
-          <Image
-            src={"/images/girl2.png"}
-            width={400}
-            height={330}
-            alt="girl"
-            className={styles.image1}
-          />
-        </div>
         <div className={styles.imageContainer2}>
           <Image
             src={"/images/mobile.png"}
@@ -39,18 +30,14 @@ const HeroShowcase = () => {
         <div className={styles.imageContainer3}>
           <Image
             src={"/images/screen.jpeg"}
-            width={635}
+            width={805}
             height={508}
             alt="mobile"
             className={styles.image3}
           />
         </div>
-        <div className={styles.elipse1}>
-        
-        </div>
-        <div className={styles.elipse2}>
-    
-        </div>
+        <div className={styles.elipse1}></div>
+        <div className={styles.elipse2}></div>
       </div>
     </div>
   );
