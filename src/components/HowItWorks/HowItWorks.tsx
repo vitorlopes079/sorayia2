@@ -113,7 +113,14 @@ const HowItWorks: React.FC = () => {
             style={{ transform: `translateX(-${currentImage * 100}%)` }}
           >
             {images.map((src, index) => (
-              <div className={styles.slide} key={index}>
+              <div
+                className={`${styles.slide} ${
+                  currentImage === index ? styles.active : ""
+                }`}
+                key={index}
+              >
+                <div className={styles.ellipse1}></div>
+                <div className={styles.ellipse2}></div>
                 <Image
                   src={src}
                   alt={`Slide ${index + 1}`}
