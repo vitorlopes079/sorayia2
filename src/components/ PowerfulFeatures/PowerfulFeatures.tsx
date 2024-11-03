@@ -8,22 +8,37 @@ const features = [
     title: "Reliable, Insightful Responses",
     description:
       "Empower your chatbot with blockchain-based infrastructure to ensure every interaction is secure and reliable, giving your users the confidence they need in every response.",
+    imageSrc: "/images/powerful2.png",
+    width: 301,
+    height: 240,
+    top: "24px",
+    overflow: "visible",
   },
   {
     title: "Lead Generation Engine",
     description:
       "Gather your customers' data seamlessly while delivering a personalized experience that meets their needs.",
+    imageSrc: "/images/powerful3.png",
+    width: 330,
+    height: 230,
+    top: "50px",
+    overflow: "visible",
   },
   {
     title: "Advanced Analytics",
     description:
       "Get insights into your Digital Avatar’s interactions with your customers and use them to improve your business performance.",
+    imageSrc: "/images/powerful.png",
+    width: 400,
+    height: 254,
+    top: "60px",
+    overflow: "hidden",
   },
 ];
-
 const smallerFeatures = [
   {
     title: "Customizations",
+
     description:
       "Bring your brand to life with a customizable digital avatar. Create engaging, lifelike characters that interact seamlessly with users, offering personalized support and a unique brand presence in the digital world",
     icon: "/images/customizations.png",
@@ -91,6 +106,11 @@ const PowerfulFeatures = () => {
               key={index}
               title={feature.title}
               description={feature.description}
+              imageSrc={feature.imageSrc}
+              width={feature.width}
+              height={feature.height}
+              top={feature.top}
+              overflow={feature.overflow}
             />
           ))}
         </div>

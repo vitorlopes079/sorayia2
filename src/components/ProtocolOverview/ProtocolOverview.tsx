@@ -14,8 +14,8 @@ const ProtocolOverview = () => {
           <Image
             src="/images/protocol-diagram.png"
             alt="Protocol Diagram"
-            width={800}
-            height={600}
+            width={1230}
+            height={1080}
             className={styles.diagramImage}
           />
         </div>

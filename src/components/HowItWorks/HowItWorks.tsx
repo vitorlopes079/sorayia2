@@ -51,15 +51,18 @@ const HowItWorks: React.FC = () => {
 
   const toggleStep = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
+    if (activeIndex !== index) {
+      setCurrentImage(index);
+    }
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 3000000); // Change image every 3 seconds
+    }, 5000);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(interval); 
+  }, [currentImage]); 
 
   const handleBulletClick = (index: number) => {
     setCurrentImage(index);
@@ -67,7 +70,7 @@ const HowItWorks: React.FC = () => {
 
   return (
     <div className={styles.howItWorks}>
-      <div className={styles.col}>
+      <div className={`${styles.col} ${styles.colQuestions}`}>
         <h2 className={styles.title}>HOW IT WORKS</h2>
         <p className={styles.subtitle}>
           Customizing your Avatar, Upload Your Data, Train the AI, Customize It,
