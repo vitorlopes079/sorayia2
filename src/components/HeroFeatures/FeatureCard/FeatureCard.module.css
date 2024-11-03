@@ -36,8 +36,8 @@
 
 @media (max-width: 1100px) {
   .featureCard {
-    width: 350px; /* Reduce width */
-    font-size: 14px; /* Decrease font size for smaller screens */
+    width: 350px; 
+    font-size: 14px;
   }
 
   .text {

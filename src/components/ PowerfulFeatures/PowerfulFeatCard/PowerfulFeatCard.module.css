@@ -4,7 +4,6 @@
   max-width: 400px;
   min-width: 400px;
   max-height: 478px;
-
   min-height: 478px;
   background: #f9f9f9;
   border-radius: 8px;
@@ -66,14 +65,20 @@
 
 @media (max-width: 440px) {
   .content {
-    padding: 1rem; /* Reduce padding */
+    padding: 1rem; 
   }
 
   .title {
-    font-size: 20px; /* Further reduce font size for the title */
+    font-size: 20px; 
   }
 
   .description {
-    font-size: 13px; /* Further reduce font size for the description */
+    font-size: 13px; 
+  }
+
+  .card {
+    transform: scale(
+      0.9
+    );
   }
 }
