@@ -11,7 +11,7 @@ const features = [
     imageSrc: "/images/powerful2.png",
     width: 301,
     height: 240,
-    top: "24px",
+    top: "12px",
     overflow: "visible",
   },
   {
@@ -21,7 +21,7 @@ const features = [
     imageSrc: "/images/powerful3.png",
     width: 330,
     height: 230,
-    top: "50px",
+    top: "42px",
     overflow: "visible",
   },
   {

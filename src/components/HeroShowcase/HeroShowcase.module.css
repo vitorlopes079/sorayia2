@@ -104,8 +104,8 @@
   filter: blur(60px) brightness(0.4);
 
   position: absolute;
-  left: calc(50% + -90px);
-  top: -260px;
+  left: calc(50% + -150px);
+  top: -240px;
   z-index: 1;
 }
 
@@ -126,13 +126,13 @@
   }
 
   .elipse1 {
-    top: -70px;
+    top: -50px;
     width: 270px;
     height: 265.108px;
   }
 
   .elipse2 {
-    top: -120px;
+    top: -100px;
     width: 315px;
     height: 309.293px;
   }
@@ -163,11 +163,11 @@
   }
 
   .elipse1 {
-    top: -30px;
+    top: -10px;
   }
 
   .elipse2 {
-    top: -120px;
+    top: -40px;
   }
 }
 
@@ -220,10 +220,10 @@
   }
 
   .elipse1 {
-    top: 10px;
+    top: 50px;
   }
 
   .elipse2 {
-    top: -20px;
+    top: 50px;
   }
 }
