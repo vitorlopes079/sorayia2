@@ -78,6 +78,7 @@
   position: relative;
   height: 615px;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) 63.64%, #000 95%);
+  overflow: hidden;
 }
 
 .zoomedVideo {
@@ -89,6 +90,7 @@
   position: absolute;
   bottom: 60px;
   right: -80px;
+  
 }
 
 .gradientOverlay {
