@@ -30,8 +30,8 @@ const HeroShowcase = () => {
         <div className={styles.imageContainer3}>
           <Image
             src={"/images/screen.jpeg"}
-            width={805}
-            height={508}
+            width={830}
+            height={525}
             alt="mobile"
             className={styles.image3}
           />

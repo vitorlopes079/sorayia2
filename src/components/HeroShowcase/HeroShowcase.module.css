@@ -41,12 +41,13 @@
   position: absolute;
   left: calc(50% + -125px);
   top: -150px;
-  width: 1000px;
-  height: 584.337px;
+  width: 1024px;
+  height: 598.337px;
   z-index: 2;
   background: url("/images/mac.png") 100% / cover no-repeat;
   overflow: hidden;
 }
+
 
 .imageContainer3::before {
   content: "";

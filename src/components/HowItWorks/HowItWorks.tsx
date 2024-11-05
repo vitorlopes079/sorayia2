@@ -61,8 +61,8 @@ const HowItWorks: React.FC = () => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 5000);
 
-    return () => clearInterval(interval); 
-  }, [currentImage]); 
+    return () => clearInterval(interval);
+  }, []);
 
   const handleBulletClick = (index: number) => {
     setCurrentImage(index);
@@ -111,30 +111,29 @@ const HowItWorks: React.FC = () => {
       </div>
       <div className={styles.col}>
         <div className={styles.carousel}>
-          <div
-            className={styles.carouselTrack}
-            style={{ transform: `translateX(-${currentImage * 100}%)` }}
-          >
-            {images.map((src, index) => (
-              <div
-                className={`${styles.slide} ${
-                  currentImage === index ? styles.active : ""
-                }`}
-                key={index}
-              >
-                <div className={styles.ellipse1}></div>
-                <div className={styles.ellipse2}></div>
-                <Image
-                  src={src}
-                  alt={`Slide ${index + 1}`}
-                  fill
-                  sizes="100vw"
-                  style={{ objectFit: "cover" }}
-                  priority
-                  className={styles.image}
-                />
-              </div>
-            ))}
+          <div className={styles.slide}>
+            <div className={styles.ellipse1}></div>
+            <div className={styles.ellipse2}></div>
+            <div
+              className={styles.imageWrapper}
+              style={{
+                transform: `translateX(-${currentImage * 100}%)`,
+              }}
+            >
+              {images.map((src, index) => (
+                <div className={styles.imageContainer} key={index}>
+                  <Image
+                    src={src}
+                    alt={`Slide ${index + 1}`}
+                    fill
+                    sizes="100vw"
+                    style={{ objectFit: "cover" }}
+                    priority
+                    className={styles.image}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <div className={styles.bullets}>
             {images.map((_, index) => (
