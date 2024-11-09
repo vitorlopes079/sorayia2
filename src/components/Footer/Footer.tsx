@@ -19,7 +19,9 @@ const Footer = () => {
             />
             <h4 className={styles.logoText}>SORAYIA.COM</h4>
           </div>{" "}
-          <p className={styles.subtitle}>Digital avatars for your business</p>
+          <p className={styles.subtitle}>
+            Custom digital avatar for your web3 business
+          </p>
           <div className={styles.socialIcons}>
             <ButtonFilled text={"Contact"} />
 
