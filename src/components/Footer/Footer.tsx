@@ -19,7 +19,7 @@ const Footer = () => {
             />
             <h4 className={styles.logoText}>SORAYIA.COM</h4>
           </div>{" "}
-          <p className={styles.subtitle}>Custom ChatGPT for your business</p>
+          <p className={styles.subtitle}>Digital avatars for your business</p>
           <div className={styles.socialIcons}>
             <ButtonFilled text={"Contact"} />
 
