@@ -32,9 +32,7 @@
   font-weight: 400;
 }
 
-.logo {
-  margin-bottom: 1rem;
-}
+
 
 .icon {
   background-color: white;
@@ -141,6 +139,17 @@
   z-index: 20;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoImage {
+  width: 24px;
+  height: 26px;
+}
+
 @media (max-width: 1700px) {
   .linksSection {
     display: flex;
@@ -189,11 +198,21 @@
   .linksColumn h3 {
     margin-top: 1rem;
   }
+
+  .logoImage {
+    width: 28px;
+    height: 31px;
+  }
 }
 
 @media (max-width: 620px) {
   .linksSection {
     flex-direction: column;
     gap: 2px;
+  }
+
+  .logoImage {
+    width: 24px;
+    height: 26px;
   }
 }

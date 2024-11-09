@@ -9,7 +9,16 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.branding}>
-          <h4 className={styles.header}>ChatBase</h4>
+          <div className={styles.logo}>
+            <Image
+              src="/images/logo.svg"
+              width={35}
+              height={39}
+              alt="logo"
+              className={styles.logoImage}
+            />
+            <h4 className={styles.logoText}>SORAYIA.COM</h4>
+          </div>{" "}
           <p className={styles.subtitle}>Custom ChatGPT for your business</p>
           <div className={styles.socialIcons}>
             <ButtonFilled text={"Contact"} />
