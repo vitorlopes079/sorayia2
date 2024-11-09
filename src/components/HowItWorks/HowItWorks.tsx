@@ -38,11 +38,11 @@ const steps = [
 ];
 
 const images = [
-  "/images/placeholder1.jpg",
-  "/images/placeholder2.jpg",
-  "/images/placeholder3.jpg",
-  "/images/placeholder4.jpg",
-  "/images/placeholder5.jpg",
+  "/images/placeholder1.png",
+  "/images/placeholder2.png",
+  "/images/placeholder3.png",
+  "/images/placeholder4.png",
+  "/images/placeholder5.png",
 ];
 
 const HowItWorks: React.FC = () => {
@@ -127,7 +127,7 @@ const HowItWorks: React.FC = () => {
                     alt={`Slide ${index + 1}`}
                     fill
                     sizes="100vw"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "contain" }} // Change "cover" to "contain"
                     priority
                     className={styles.image}
                   />

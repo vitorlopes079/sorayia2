@@ -5,14 +5,18 @@
   width: 100%;
   max-width: 1950px;
   margin: 80px auto;
-  overflow: hidden;
   padding: 0 5%;
+  position: relative;
+  overflow: hidden;
+  height: 700px;
 }
 
 .col {
   flex: 1;
   padding: 20px;
   position: relative;
+  max-width: 700px;
+  min-width: 700px;
 }
 
 .text1,
@@ -23,13 +27,12 @@
 }
 
 .header {
-  font-size: 60px;
+  font-size: 56px;
   line-height: 66px;
   margin-top: 30px;
   font-family: "Red Hat Display", "Helvetica Neue", Arial, sans-serif !important;
   font-weight: 400 !important;
   z-index: 10;
-  max-width: 700px;
 }
 
 .buttonContainer {
@@ -39,95 +42,101 @@
   gap: 15px;
 }
 
-.smallEllipse {
+.heroImageColumn {
+  aspect-ratio: 2 / 1;
+  width: 100%;
+  max-width: 1400px;
   position: absolute;
-  top: 380px;
-  width: 521px;
-  height: 260px;
-  flex-shrink: 0;
-  border-radius: 926px;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(249, 96, 228, 0.4) 23.6%,
-    rgba(75, 57, 147, 0) 100%
-  );
-  filter: blur(90px);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+  z-index: 1;
+  right: 20px;
 }
 
-.smallEllipse2 {
+.heroImageContainerMobile {
+  aspect-ratio: 2 / 1;
+  width: 100%;
+  max-width: 800px;
   position: absolute;
-  top: 380px;
-  width: 321px;
-  height: 260px;
-  flex-shrink: 0;
+  z-index: 1;
+}
+
+.smallEllipse {
+  width: 521px;
+  height: 220px;
   background: linear-gradient(
     221deg,
     rgba(21, 42, 223, 0.43) -14.19%,
     rgba(109, 220, 255, 0) 108.33%
   );
-  filter: blur(90px);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.videoColumn {
-  position: relative;
-  height: 615px;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 63.64%, #000 95%);
-  overflow: hidden;
-}
-
-.zoomedVideo {
-  transform: scale(1.5);
-  width: 100%;
-  height: auto;
-  margin-top: 80px;
-  object-fit: cover;
+  filter: blur(120px);
   position: absolute;
-  bottom: 60px;
-  right: -80px;
-  
+  left: 37%;
+  border-radius: 50%;
+  bottom: 30px;
+  z-index: -1;
 }
 
-.gradientOverlay {
+.smallEllipse2 {
+  width: 926px;
+  height: 260px;
+  background: radial-gradient(
+    circle,
+    rgba(249, 96, 228, 0.4) 23.6%,
+    rgba(75, 57, 147, 0) 100%
+  );
+  filter: blur(120px);
   position: absolute;
-  top: 0;
-  right: -80px;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 63.64%, #000 95%);
-  pointer-events: none;
-  z-index: 2;
+  border-radius: 50%;
+  left: 42%;
+  bottom: -30px;
+  z-index: -1;
 }
 
-.zoomedVideoMobile {
+.heroImageContainerMobile {
   display: none;
 }
 
-.smallEllipseMobile {
-  display: none;
+@media (max-width: 1800px) {
+  .heroImageColumn {
+    max-width: 1250px;
+    right: -60px;
+  }
 }
 
-.smallEllipse2Mobile {
-  display: none;
-}
-@media (max-width: 1200px) {
-  .container {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    margin: 60px auto;
+@media (max-width: 1600px) {
+  .heroImageColumn {
+    max-width: 1250px;
+    right: -80px;
   }
 
-  .zoomedVideo {
-    transform: scale(1.3);
-    width: 100%;
-    height: auto;
-    margin-top: 80px;
-    display: none;
+  .col {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+    max-width: 800px;
+    min-width: 800px;
+  }
+
+  .header {
+    max-width: 1200px;
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .heroImageColumn {
+    max-width: 1100px;
+    right: -160px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 60px auto;
+    padding: 0;
+    margin-top: 100px;
+    overflow: visible;
   }
 
   .buttonContainer {
@@ -137,98 +146,74 @@
   .header {
     font-size: 40px;
     line-height: 46px;
-  }
-
-  .header {
-    margin-bottom: 160px;
-  }
-
-  .videoColumn {
-    display: none;
-  }
-
-  .videoMobile {
-    position: relative;
-    height: auto;
-  }
-
-  .zoomedVideoMobile {
-    display: block;
-    position: relative;
-    transform: scale(1.8);
-    max-height: 220px;
-  }
-
-  .smallEllipse {
-    display: none;
-  }
-
-  .smallEllipse2 {
-    display: none;
-  }
-
-  .smallEllipseMobile {
-    position: absolute;
-    display: block;
-    width: 271px;
-    height: 150px;
-    top: 50px;
-    z-index: 20;
-
-    flex-shrink: 0;
-    border-radius: 926px;
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(249, 96, 228, 0.4) 23.6%,
-      rgba(75, 57, 147, 0) 100%
-    );
-    filter: blur(90px);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-  }
-
-  .smallEllipse2Mobile {
-    position: absolute;
-
-    display: block;
-    width: 171px;
-    height: 150px;
-    top: 50px;
-    z-index: 20;
-
-    flex-shrink: 0;
-    background: linear-gradient(
-      221deg,
-      rgba(21, 42, 223, 0.43) -14.19%,
-      rgba(109, 220, 255, 0) 108.33%
-    );
-    filter: blur(90px);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+    text-align: center;
   }
 
   .text2 {
     margin-top: 120px;
+    text-align: center;
   }
 
   .buttonContainer {
     margin-bottom: 50px;
   }
+
+  .col {
+    width: 100%;
+    min-width: auto;
+    max-width: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroImageColumn {
+    display: none;
+  }
+
+  .heroImageContainerMobile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    height: calc(100vw / (4616 / 748));
+    background-image: url("/images/backgroundMobile.png");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    margin-top: 100px;
+  }
+
+  .foregroundImageMobile {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 297px;
+  }
+}
+
+@media (max-width: 770px) {
+
+  .foregroundImageMobile {
+    transform: scale(0.8);
+  }
+
+  .text2 {
+    margin-top: 180px;
+  }
+
+  .foregroundImageMobile {
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 500px) {
-  .videoMobile {
-    position: relative;
-  }
-
-  .zoomedVideoMobile {
-    transform: scale(2);
-  }
-
   .container {
-    margin: 10px auto;
+    margin: 90px auto;
   }
 
   .header {

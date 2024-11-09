@@ -1,7 +1,6 @@
 import React from "react";
 import ButtonFilled from "../ButtonFilled/ButtonFilled";
 import styles from "./HeroShowcase.module.css";
-import Image from "next/image";
 import BrandsContainer from "./BrandsContainer/BrandsContainer";
 
 const HeroShowcase = () => {
@@ -17,7 +16,7 @@ const HeroShowcase = () => {
 
       <BrandsContainer />
 
-      <div className={styles.imagesSection}>
+      {/* <div className={styles.imagesSection}>
         <div className={styles.imageContainer2}>
           <Image
             src={"/images/mobile.png"}
@@ -38,7 +37,7 @@ const HeroShowcase = () => {
         </div>
         <div className={styles.elipse1}></div>
         <div className={styles.elipse2}></div>
-      </div>
+      </div> */}
     </div>
   );
 };
