@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./HowItWorks.module.css";
 
@@ -55,14 +55,6 @@ const HowItWorks: React.FC = () => {
       setCurrentImage(index);
     }
   };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const handleBulletClick = (index: number) => {
     setCurrentImage(index);
@@ -127,7 +119,7 @@ const HowItWorks: React.FC = () => {
                     alt={`Slide ${index + 1}`}
                     fill
                     sizes="100vw"
-                    style={{ objectFit: "contain" }} // Change "cover" to "contain"
+                    style={{ objectFit: "contain" }}
                     priority
                     className={styles.image}
                   />

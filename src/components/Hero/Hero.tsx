@@ -17,7 +17,7 @@ const Hero = () => {
         <div className={styles.heroImageContainerMobile}>
           <Image
             src="/images/heroMobile.png"
-            width={297}
+            width={819}
             height={400}
             className={styles.foregroundImageMobile}
             alt="Foreground Image"
