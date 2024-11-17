@@ -50,7 +50,7 @@ footer {
 }
 
 main {
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
 }
 
 nextjs-portal {
@@ -101,6 +101,6 @@ nextjs-portal {
   }
 
   main {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 0 0;
   }
 }

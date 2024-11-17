@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation"; // Import usePathname hook
 import styles from "./Header.module.css";
 import Link from "next/link";
 import ButtonFilled from "../ButtonFilled/ButtonFilled";
@@ -9,14 +10,20 @@ import ButtonEmpty from "../ButtonEmpty/ButtonEmpty";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname(); // Get the current route
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Check if the current route is /docs or its children
+  const isDocsRoute = pathname.startsWith("/docs");
+
   return (
-    <div className={styles.header}>
-      <div className={styles.logo}>
+    <div
+      className={`${styles.header} ${isDocsRoute ? styles.docsBackground : ""}`}
+    >
+      <Link href="/" className={styles.logo}>
         <Image
           src="/images/logo.svg"
           width={35}
@@ -25,7 +32,7 @@ const Header = () => {
           className={styles.logoImage}
         />
         <h4 className={styles.logoText}>SORAYIA.COM</h4>
-      </div>
+      </Link>
       <div className={`${styles.links} ${menuOpen ? styles.showMenu : ""}`}>
         <Link
           href={"/"}

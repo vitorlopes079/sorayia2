@@ -5,6 +5,8 @@ import HowItWorks from "@/components/HowItWorks/HowItWorks";
 import PowerfulFeatures from "@/components/ PowerfulFeatures/PowerfulFeatures";
 import ProtocolOverview from "@/components/ProtocolOverview/ProtocolOverview";
 import Integration from "@/components/Integration/Integration";
+import Footer from "@/components/Footer/Footer";
+import BigEllipse from "@/components/BigEllipse/BigEllipse";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <PowerfulFeatures />
       <ProtocolOverview />
       <Integration />
+      <Footer />
+      <BigEllipse />
     </>
   );
 }
