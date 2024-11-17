@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; 
+import { usePathname } from "next/navigation";
 import styles from "./DocsSideMenu.module.css";
 
 const DocsSideMenu: React.FC = () => {
@@ -13,11 +13,15 @@ const DocsSideMenu: React.FC = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const isActive = (path: string) => pathname === path; 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <>
-
+      {/* Menu Icon */}
       <div
         className={styles.menuIcon}
         onClick={toggleMenu}
@@ -26,6 +30,7 @@ const DocsSideMenu: React.FC = () => {
         ☰ Navigation
       </div>
 
+      {/* Sidebar */}
       <div
         className={`${styles.sidebar} ${isMenuOpen ? styles.showMenu : ""}`}
         aria-hidden={!isMenuOpen}
@@ -42,6 +47,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/what-is-sorayia") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   What is Sorayia.com
                 </Link>
@@ -52,6 +58,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/problems-we-are") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Problems we&apos;re solving
                 </Link>
@@ -69,6 +76,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/infrastructure") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Infrastructure
                 </Link>
@@ -79,6 +87,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/heroes-studio") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Heroe’s Studio
                 </Link>
@@ -89,6 +98,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/deployment-ramp") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Deployment ramp
                 </Link>
@@ -99,6 +109,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/index-model") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Index Model
                 </Link>
@@ -109,6 +120,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/asset-market-place") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Asset marketplace
                 </Link>
@@ -126,6 +138,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/buy-sra") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Buy $SRA
                 </Link>
@@ -136,6 +149,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/stake-sra") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Stake $SRA
                 </Link>
@@ -146,6 +160,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/kryptonite") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Kryptonite introduction
                 </Link>
@@ -163,6 +178,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/community/telegram") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Telegram
                 </Link>
@@ -173,6 +189,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/community/discord") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   Discord
                 </Link>
@@ -183,6 +200,7 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/community/x") ? styles.active : ""
                   }`}
+                  onClick={closeMenu} // Close menu on click
                 >
                   X.com
                 </Link>

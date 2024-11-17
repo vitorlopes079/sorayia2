@@ -112,3 +112,48 @@
     max-width: auto;
   }
 }
+
+
+@media screen and (max-width: 980px) {
+  .content-container {
+    margin-top: 60px; /* Adjust spacing from the top */
+    width: 96%; /* Take up 96% of the viewport width */
+    max-width: none; /* Allow flexibility for smaller screens */
+    padding: 2rem; /* Reduce padding for better fit on smaller screens */
+    border-radius: 15px; /* Slightly reduce border radius */
+    min-height: 600px; /* Decrease minimum height */
+  }
+
+  .main-title {
+    font-size: 22px; /* Reduce font size */
+    margin-bottom: 2.5rem; /* Adjust bottom margin */
+  }
+
+  .subtitle {
+    font-size: 18px; /* Reduce font size */
+    margin-bottom: 2rem; /* Adjust bottom margin */
+  }
+
+  .main-paragraph {
+    font-size: 16px; /* Slightly smaller font for readability */
+    line-height: 1.6; /* Adjust line height */
+    margin-bottom: 1.5rem; /* Adjust spacing */
+  }
+
+  .section-title {
+    font-size: 18px; /* Reduce font size */
+    margin-top: 2.5rem; /* Adjust top margin */
+    margin-bottom: 1rem; /* Adjust bottom margin */
+  }
+
+  .bullet-points li,
+  .numbered-points li {
+    font-size: 16px; /* Reduce font size */
+    line-height: 1.6; /* Adjust line height */
+    margin-bottom: 0.4rem; /* Slightly smaller spacing */
+  }
+
+  .link {
+    font-size: 14px; /* Reduce font size */
+  }
+}
