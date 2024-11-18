@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./DocsSideMenu.module.css";
@@ -13,15 +13,15 @@ const DocsSideMenu: React.FC = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const closeMenu = () => {
+  useEffect(() => {
+    // Close the menu after navigation
     setIsMenuOpen(false);
-  };
+  }, [pathname]);
 
   const isActive = (path: string) => pathname === path;
 
   return (
     <>
-      {/* Menu Icon */}
       <div
         className={styles.menuIcon}
         onClick={toggleMenu}
@@ -30,14 +30,15 @@ const DocsSideMenu: React.FC = () => {
         ☰ Navigation
       </div>
 
-      {/* Sidebar */}
       <div
         className={`${styles.sidebar} ${isMenuOpen ? styles.showMenu : ""}`}
         aria-hidden={!isMenuOpen}
       >
-        <h2 className={styles.title}>Soraya Vision</h2>
-        <nav>
-          {/* Overview Section */}
+        <Link href="/docs" className={styles.title}>
+          Soraya Vision
+        </Link>
+
+        <nav style={{ marginTop: "1.5rem" }}>
           <div className={styles.menuSection}>
             <h3 className={styles.sectionTitle}>OVERVIEW</h3>
             <ul className={styles.ul}>
@@ -47,7 +48,6 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/what-is-sorayia") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
                 >
                   What is Sorayia.com
                 </Link>
@@ -58,7 +58,6 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/problems-we-are") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
                 >
                   Problems we&apos;re solving
                 </Link>
@@ -66,7 +65,6 @@ const DocsSideMenu: React.FC = () => {
             </ul>
           </div>
 
-          {/* Protocol Section */}
           <div className={styles.menuSection}>
             <h3 className={styles.sectionTitle}>PROTOCOL</h3>
             <ul className={styles.ul}>
@@ -76,7 +74,6 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/infrastructure") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
                 >
                   Infrastructure
                 </Link>
@@ -87,7 +84,6 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/heroes-studio") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
                 >
                   Heroe’s Studio
                 </Link>
@@ -98,7 +94,6 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/deployment-ramp") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
                 >
                   Deployment ramp
                 </Link>
@@ -109,7 +104,6 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/index-model") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
                 >
                   Index Model
                 </Link>
@@ -120,7 +114,6 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/asset-market-place") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
                 >
                   Asset marketplace
                 </Link>
@@ -128,7 +121,6 @@ const DocsSideMenu: React.FC = () => {
             </ul>
           </div>
 
-          {/* Economics Section */}
           <div className={styles.menuSection}>
             <h3 className={styles.sectionTitle}>ECONOMICS</h3>
             <ul className={styles.ul}>
@@ -138,7 +130,6 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/buy-sra") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
                 >
                   Buy $SRA
                 </Link>
@@ -149,7 +140,6 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/stake-sra") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
                 >
                   Stake $SRA
                 </Link>
@@ -160,7 +150,6 @@ const DocsSideMenu: React.FC = () => {
                   className={`${styles.link} ${
                     isActive("/docs/kryptonite") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
                 >
                   Kryptonite introduction
                 </Link>
@@ -168,42 +157,35 @@ const DocsSideMenu: React.FC = () => {
             </ul>
           </div>
 
-          {/* Community Section */}
           <div className={styles.menuSection}>
             <h3 className={styles.sectionTitle}>COMMUNITY</h3>
             <ul className={styles.ul}>
               <li className={styles.menuItem}>
                 <a
                   href="https://t.me/sorayiaofficialcommunity"
-                  className={`${styles.link} ${
-                    isActive("/community/telegram") ? styles.active : ""
-                  }`}
-                  onClick={closeMenu}
+                  className={styles.link}
+                  target="_blank"
                 >
                   Telegram
                 </a>
               </li>
               <li className={styles.menuItem}>
                 <Link
-                  href="/community/discord"
-                  className={`${styles.link} ${
-                    isActive("/community/discord") ? styles.active : ""
-                  }`}
-                  onClick={closeMenu} // Close menu on click
+                  href="https://discord.gg/ChbBJmQC"
+                  className={styles.link}
+                  target="_blank"
                 >
                   Discord
                 </Link>
               </li>
               <li className={styles.menuItem}>
-                <Link
-                  href="/community/x"
-                  className={`${styles.link} ${
-                    isActive("/community/x") ? styles.active : ""
-                  }`}
-                  onClick={closeMenu} // Close menu on click
+                <a
+                  href="https://x.com/sorayiadotcom"
+                  className={styles.link}
+                  target="_blank"
                 >
                   X.com
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

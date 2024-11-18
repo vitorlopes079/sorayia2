@@ -49,7 +49,7 @@ const Footer = () => {
                 className={styles.iconImage}
               />
             </Link>
-            <Link href="https://www.twitter.com" className={styles.icon}>
+            <Link href="https://x.com/sorayiadotcom" className={styles.icon}>
               <Image
                 src="/images/social-icons/twitter.png"
                 alt="Twitter"

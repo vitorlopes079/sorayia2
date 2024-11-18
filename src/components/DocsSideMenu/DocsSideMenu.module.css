@@ -24,14 +24,6 @@
   margin-top: 100px;
 }
 
-.title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #fff;
-  padding: 0rem 1rem;
-}
-
 .menuSection {
   margin-bottom: 1.5rem;
 }
@@ -93,6 +85,15 @@
 
 .pushDown {
   margin-top: 360px;
+}
+
+.sidebar .title {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 0rem 1rem;
 }
 
 @media screen and (max-width: 1500px) {
