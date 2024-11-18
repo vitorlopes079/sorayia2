@@ -1,9 +1,19 @@
 import React from "react";
 import "../docs.css";
+import Image from "next/image";
 
 const page = () => {
   return (
     <div className="content-container">
+      <div className="image-wrapper-sra">
+        <Image
+          src="/images/docs-sra.png"
+          alt="Sra Token"
+          fill
+          className="responsive-image-sra"
+        />
+      </div>
+
       <h1 className="main-title">Buy $SRA Token</h1>
       <p className="main-paragraph">
         The $SRA token is essential to the Sorayia.com ecosystem, circulating

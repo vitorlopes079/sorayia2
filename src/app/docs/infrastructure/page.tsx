@@ -1,5 +1,6 @@
 import React from "react";
 import "../docs.css";
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -57,6 +58,15 @@ const page = () => {
         bring their digital characters to life and customize them to new
         heights.
       </p>
+
+      <div className="image-wrapper-infra">
+        <Image
+          src="/images/docs-infra.png"
+          alt="infrastructure"
+          fill
+          className="responsive-image-infra"
+        />
+      </div>
     </div>
   );
 };

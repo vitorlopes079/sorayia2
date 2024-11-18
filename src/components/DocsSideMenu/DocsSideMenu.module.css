@@ -115,6 +115,7 @@
     font-size: 18px;
     padding: 8px 12px;
     margin: 0 auto;
+    z-index: 0;
   }
 
   .sidebar {

@@ -2,10 +2,20 @@
 
 import React from "react";
 import "./docs.css";
+import Image from "next/image";
 
 export default function Page() {
   return (
     <div className="content-container">
+      <div className="image-wrapper-main">
+        <Image
+          src="/images/docs-main.png"
+          alt="Crafting the Future of Human-AI Connection"
+          fill
+          className="responsive-image-main"
+        />
+      </div>
+
       <h1 className="main-title">CRAFTING THE FUTURE OF HUMAN-AI CONNECTION</h1>
       <h2 className="subtitle">A Vision for Seamless Human-AI Symbiosis</h2>
 

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation"; // Import usePathname hook
+import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import ButtonFilled from "../ButtonFilled/ButtonFilled";
@@ -10,13 +10,13 @@ import ButtonEmpty from "../ButtonEmpty/ButtonEmpty";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname(); // Get the current route
+  const [dropdownOpen, setDropdownOpen] = useState(false); // Dropdown state
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // Check if the current route is /docs or its children
   const isDocsRoute = pathname.startsWith("/docs");
 
   return (
@@ -55,13 +55,41 @@ const Header = () => {
         >
           Pricing
         </Link>
-        <Link
-          href={"/"}
-          className={styles.link}
-          onClick={() => setMenuOpen(false)}
+        <div
+          className={styles.dropdownContainer}
+          onMouseEnter={() => !menuOpen && setDropdownOpen(true)}
+          onMouseLeave={() => !menuOpen && setDropdownOpen(false)}
         >
-          Learn
-        </Link>
+          <span
+            className={`${styles.dropdownTrigger} ${styles.link}`}
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+          >
+            Learn
+            <span className={styles.arrowIcon}>
+              <Image
+                src="/images/down-arrow.png"
+                alt="Arrow Down"
+                width={12}
+                height={12}
+                className={styles.mobileOnly} // Ensure it's only visible on mobile
+              />
+            </span>
+          </span>
+          {dropdownOpen && (
+            <div className={styles.dropdownMenu}>
+              <Link
+                href="/docs"
+                className={styles.dropdownItem}
+                onClick={() => {
+                  setDropdownOpen(false); // Close dropdown
+                  setMenuOpen(false); // Close mobile slider menu
+                }}
+              >
+                Documents
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
       <div className={styles.buttonsContainer}>
         <ButtonFilled text={"Login"} isHeader={true} />
