@@ -173,15 +173,15 @@ const DocsSideMenu: React.FC = () => {
             <h3 className={styles.sectionTitle}>COMMUNITY</h3>
             <ul className={styles.ul}>
               <li className={styles.menuItem}>
-                <Link
-                  href="/community/telegram"
+                <a
+                  href="https://t.me/sorayiaofficialcommunity"
                   className={`${styles.link} ${
                     isActive("/community/telegram") ? styles.active : ""
                   }`}
-                  onClick={closeMenu} // Close menu on click
+                  onClick={closeMenu}
                 >
                   Telegram
-                </Link>
+                </a>
               </li>
               <li className={styles.menuItem}>
                 <Link
