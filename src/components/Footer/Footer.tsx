@@ -1,13 +1,35 @@
-import React from "react";
+"use client";
+
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Footer.module.css";
 import ButtonFilled from "../ButtonFilled/ButtonFilled";
+import { FiChevronDown } from "react-icons/fi";
 
 const Footer = () => {
+  // State variable to track which section is open
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  // Refs for calculating height
+  const productRef = useRef<HTMLUListElement>(null);
+  const resourcesRef = useRef<HTMLUListElement>(null);
+  const companyRef = useRef<HTMLUListElement>(null);
+
+  // Helper function to toggle sections
+  const toggleSection = (section: string) => {
+    setOpenSection((prev) => (prev === section ? null : section));
+  };
+
+  // Helper function to get the max-height
+  const getMaxHeight = (ref: React.RefObject<HTMLUListElement>) => {
+    return ref.current ? ref.current.scrollHeight + "px" : "0px";
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
+        {/* Branding Section */}
         <div className={styles.branding}>
           <div className={styles.logo}>
             <Image
@@ -18,7 +40,7 @@ const Footer = () => {
               className={styles.logoImage}
             />
             <h4 className={styles.logoText}>SORAYIA.COM</h4>
-          </div>{" "}
+          </div>
           <p className={styles.subtitle}>
             Custom digital avatar for your web3 business
           </p>
@@ -76,7 +98,7 @@ const Footer = () => {
             >
               <Image
                 src="/images/social-icons/telegram.png"
-                alt="YouTube"
+                alt="Telegram"
                 width={24}
                 height={24}
                 className={styles.iconImage}
@@ -87,9 +109,29 @@ const Footer = () => {
 
         {/* Links Section */}
         <div className={styles.linksSection}>
+          {/* Product Links */}
           <div className={styles.linksColumn}>
-            <h3>Product</h3>
-            <ul>
+            <h3
+              className={styles.columnHeader}
+              onClick={() => toggleSection("product")}
+            >
+              Product
+              <FiChevronDown
+                className={`${styles.arrow} ${
+                  openSection === "product" ? styles.open : ""
+                }`}
+              />
+            </h3>
+            <ul
+              ref={productRef}
+              className={`${styles.collapsibleList} ${
+                openSection === "product" ? styles.open : ""
+              }`}
+              style={{
+                maxHeight:
+                  openSection === "product" ? getMaxHeight(productRef) : "0px",
+              }}
+            >
               <li>
                 <Link href="/pricing">Pricing</Link>
               </li>
@@ -101,9 +143,32 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          {/* Resources Links */}
           <div className={styles.linksColumn}>
-            <h3>Resources</h3>
-            <ul>
+            <h3
+              className={styles.columnHeader}
+              onClick={() => toggleSection("resources")}
+            >
+              Resources
+              <FiChevronDown
+                className={`${styles.arrow} ${
+                  openSection === "resources" ? styles.open : ""
+                }`}
+              />
+            </h3>
+            <ul
+              ref={resourcesRef}
+              className={`${styles.collapsibleList} ${
+                openSection === "resources" ? styles.open : ""
+              }`}
+              style={{
+                maxHeight:
+                  openSection === "resources"
+                    ? getMaxHeight(resourcesRef)
+                    : "0px",
+              }}
+            >
               <li>
                 <Link href="/api">API</Link>
               </li>
@@ -118,9 +183,30 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          {/* Company Links */}
           <div className={styles.linksColumn}>
-            <h3>Company</h3>
-            <ul>
+            <h3
+              className={styles.columnHeader}
+              onClick={() => toggleSection("company")}
+            >
+              Company
+              <FiChevronDown
+                className={`${styles.arrow} ${
+                  openSection === "company" ? styles.open : ""
+                }`}
+              />
+            </h3>
+            <ul
+              ref={companyRef}
+              className={`${styles.collapsibleList} ${
+                openSection === "company" ? styles.open : ""
+              }`}
+              style={{
+                maxHeight:
+                  openSection === "company" ? getMaxHeight(companyRef) : "0px",
+              }}
+            >
               <li>
                 <Link href="/privacy-policy">Privacy Policy</Link>
               </li>
