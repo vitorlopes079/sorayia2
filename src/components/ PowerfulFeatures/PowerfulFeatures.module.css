@@ -2,7 +2,7 @@
   margin: auto;
   background-color: #fff;
   width: 100%;
-  padding: 10rem 5%;
+  padding: 14rem 5%;
 }
 
 .innerContent {
@@ -21,7 +21,7 @@
   font-size: 19px;
   color: #a1a1ab;
 
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
 }
 .featuresGrid {
   display: flex;
@@ -61,7 +61,7 @@
   }
 
   .container {
-    padding: 6rem 5%;
+    padding: 8rem 5%;
   }
 
   .header {
@@ -87,7 +87,7 @@
 
 @media (max-width: 600px) {
   .container {
-    padding: 4rem 3%;
+    padding: 8rem 3%;
   }
 
   .header {

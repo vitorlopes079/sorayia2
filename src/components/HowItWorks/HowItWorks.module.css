@@ -1,6 +1,6 @@
 .howItWorks {
   color: #fff;
-  padding: 2rem 0;
+  padding: 12rem 0;
   border-radius: 8px;
   width: 90%;
   max-width: 1950px;
@@ -295,7 +295,7 @@
 @media (max-width: 1000px) {
   .howItWorks {
     width: 100%;
-    padding: 1.5rem 1rem;
+    padding: 8rem 1rem;
   }
 
   .carousel {
@@ -325,7 +325,7 @@
 @media (max-width: 600px) {
   .howItWorks {
     flex-direction: column;
-    padding: 1.5rem 1rem;
+    padding: 8rem 1rem;
   }
 
   .colQuestions {

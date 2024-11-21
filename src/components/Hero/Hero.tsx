@@ -12,7 +12,7 @@ const Hero = () => {
           The #1 platform that serves Web3 business
         </p>
         <h1 className={styles.header}>
-          Digital Avatars that Makes User Support Warm and Human
+          Digital Avatars that Makes User <span className={styles.gradient}>Support Warm and Human</span>
         </h1>
         <div className={styles.heroImageContainerMobile}>
           <Image
