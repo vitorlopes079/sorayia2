@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./HowItWorks.module.css";
 
@@ -45,9 +45,35 @@ const images = [
   "/images/placeholder5.png",
 ];
 
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check window width
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // adjust breakpoint as needed
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return isMobile;
+};
+
 const HowItWorks: React.FC = () => {
+  const isMobile = useIsMobile();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    // Preload images
+    images.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
 
   const toggleStep = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -94,52 +120,67 @@ const HowItWorks: React.FC = () => {
                   />
                 </span>
               </div>
-              {activeIndex === index && (
+              <div
+                className={`${styles.stepContent} ${
+                  activeIndex === index ? styles.activeContent : ""
+                }`}
+              >
                 <div className={styles.stepDescription}>{step.description}</div>
-              )}
+                {isMobile && (
+                  <div className={styles.mobileImageContainer}>
+                    <Image
+                      src={images[index]}
+                      alt={`Step ${index + 1} Image`}
+                      width={600}
+                      height={400}
+                      className={styles.mobileImage}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
       </div>
-      <div className={styles.col}>
-        <div className={styles.carousel}>
-          <div className={styles.slide}>
-            <div className={styles.ellipse1}></div>
-            <div className={styles.ellipse2}></div>
-            <div
-              className={styles.imageWrapper}
-              style={{
-                transform: `translateX(-${currentImage * 100}%)`,
-              }}
-            >
-              {images.map((src, index) => (
-                <div className={styles.imageContainer} key={index}>
-                  <Image
-                    src={src}
-                    alt={`Slide ${index + 1}`}
-                    fill
-                    sizes="100vw"
-                    style={{ objectFit: "contain" }}
-                    priority
-                    className={styles.image}
-                  />
-                </div>
+      {!isMobile && (
+        <div className={styles.col}>
+          <div className={styles.carousel}>
+            <div className={styles.slide}>
+              <div
+                className={styles.imageWrapper}
+                style={{
+                  transform: `translateX(-${currentImage * 100}%)`,
+                }}
+              >
+                {images.map((src, index) => (
+                  <div className={styles.imageContainer} key={index}>
+                    <Image
+                      src={src}
+                      alt={`Slide ${index + 1}`}
+                      fill
+                      sizes="100vw"
+                      style={{ objectFit: "contain" }}
+                      priority
+                      className={styles.image}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className={styles.bullets}>
+              {images.map((_, index) => (
+                <span
+                  key={index}
+                  className={`${styles.bullet} ${
+                    currentImage === index ? styles.activeBullet : ""
+                  }`}
+                  onClick={() => handleBulletClick(index)}
+                />
               ))}
             </div>
           </div>
-          <div className={styles.bullets}>
-            {images.map((_, index) => (
-              <span
-                key={index}
-                className={`${styles.bullet} ${
-                  currentImage === index ? styles.activeBullet : ""
-                }`}
-                onClick={() => handleBulletClick(index)}
-              />
-            ))}
-          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

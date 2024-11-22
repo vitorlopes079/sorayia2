@@ -1,6 +1,6 @@
 .howItWorks {
   color: #fff;
-  padding: 12rem 0;
+  padding: 16rem 0;
   border-radius: 8px;
   width: 90%;
   max-width: 1950px;
@@ -75,13 +75,39 @@
   color: #888;
 }
 
+.stepContent {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.step.active .stepContent {
+  max-height: 1000px; /* Adjust as needed */
+}
+
 .stepDescription {
   margin-top: 1rem;
   color: #ccc;
 }
 
-.active .stepDescription {
-  display: block;
+.mobileImageContainer {
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.mobileImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.step.active .mobileImage {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .carousel {
@@ -102,48 +128,6 @@
   overflow: hidden;
   border-radius: 5px;
   background: rgba(161, 161, 170, 0.05);
-}
-
-.slide::before,
-.slide::after {
-  content: "";
-  position: absolute;
-  border-radius: 5px;
-  pointer-events: none;
-}
-
-.slide::before {
-  top: 0;
-  left: 2px;
-  right: 0px;
-  bottom: 50%;
-  border: 2px solid transparent;
-  border-image: linear-gradient(
-      135deg,
-      rgba(255, 117, 233, 0.45),
-      rgba(255, 117, 233, 0) 50%
-    )
-    1;
-  mask-image: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
-  box-shadow: -10px -10px 20px rgba(255, 117, 233, 0.3);
-}
-
-.slide.active::after {
-  content: "";
-  position: absolute;
-  top: 75%;
-  right: 0px;
-  width: 2px;
-  height: 30%;
-  background: linear-gradient(
-    to bottom,
-    rgba(39, 181, 210, 0),
-    rgba(39, 181, 210, 0.5) 50%,
-    rgba(39, 181, 210, 0)
-  );
-  transform: translateY(-50%);
-  box-shadow: 0 0 10px rgba(63, 0, 251, 0.6), 0 0 20px rgba(39, 181, 210, 0.4);
-  border-radius: 5px;
 }
 
 .imageWrapper {
@@ -198,29 +182,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.ellipse1 {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background-color: rgba(255, 68, 211, 0.6);
-  filter: blur(74px);
-  border-radius: 50%;
-  flex-shrink: 0;
-  z-index: 10;
-}
-
-.ellipse2 {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  background-color: rgba(63, 0, 251, 0.6);
-  filter: blur(64px);
-  border-radius: 50%;
-  flex-shrink: 0;
-  z-index: 10;
-  bottom: 110px;
-  right: -20px;
-}
+/* Media Queries */
 
 @media (max-width: 1400px) {
   .howItWorks {
@@ -286,16 +248,12 @@
   .colQuestions {
     min-height: 640px;
   }
-
-  .ellipse2 {
-    bottom: 85px;
-  }
 }
 
 @media (max-width: 1000px) {
   .howItWorks {
     width: 100%;
-    padding: 8rem 1rem;
+    padding: 12rem 1rem;
   }
 
   .carousel {
@@ -322,21 +280,18 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .carousel {
+    display: none;
+  }
+
   .howItWorks {
     flex-direction: column;
     padding: 8rem 1rem;
   }
 
   .colQuestions {
-    min-height: 710px;
-  }
-
-  .carousel {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    aspect-ratio: 3/4;
+    min-height: auto;
   }
 
   .title {
@@ -360,12 +315,14 @@
     font-size: 14px;
   }
 
-  .bullets {
-    bottom: 15px;
-  }
-
   .bullet {
     width: 10px;
     height: 10px;
+  }
+
+  /* Ensure the image fits within the container */
+  .mobileImage {
+    max-width: 100%;
+    height: auto;
   }
 }

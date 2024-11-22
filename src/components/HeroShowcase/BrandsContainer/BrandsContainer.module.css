@@ -29,10 +29,18 @@
   white-space: nowrap;
 }
 
-.reallusion {
-  margin-right: -90px;
+.elevenLab{
+  margin-right: 120px;
 }
 
-.etherum {
-  margin-right: 52px;
+.webgl {
+  margin-left: 50px;
+  margin-right: -15px;
+}
+
+.webgl2 {
+}
+
+.unity{
+  margin: 0 -26px;
 }
