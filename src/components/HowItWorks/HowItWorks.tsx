@@ -49,12 +49,11 @@ const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check window width
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // adjust breakpoint as needed
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Set initial value
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -66,14 +65,6 @@ const HowItWorks: React.FC = () => {
   const isMobile = useIsMobile();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    // Preload images
-    images.forEach((src) => {
-      const img = new window.Image();
-      img.src = src;
-    });
-  }, []);
 
   const toggleStep = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -134,6 +125,8 @@ const HowItWorks: React.FC = () => {
                       width={600}
                       height={400}
                       className={styles.mobileImage}
+                      loading="eager"
+                      priority
                     />
                   </div>
                 )}
@@ -160,7 +153,7 @@ const HowItWorks: React.FC = () => {
                       fill
                       sizes="100vw"
                       style={{ objectFit: "contain" }}
-                      priority
+                      priority={index === 0}
                       className={styles.image}
                     />
                   </div>
@@ -179,6 +172,22 @@ const HowItWorks: React.FC = () => {
               ))}
             </div>
           </div>
+        </div>
+      )}
+      {/* Preload all images (hidden) */}
+      {isMobile && (
+        <div className={styles.preloadImages}>
+          {images.map((src, idx) => (
+            <Image
+              key={idx}
+              src={src}
+              alt={`Preload Image ${idx}`}
+              width={1}
+              height={1}
+              loading="eager"
+              className={styles.hiddenImage}
+            />
+          ))}
         </div>
       )}
     </div>
